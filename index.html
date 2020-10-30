@@ -22,6 +22,7 @@
             overflow: hidden;
             background-color:grey; 
             padding: 20px; 
+        
             
         }
 
@@ -67,10 +68,36 @@
             font-size: 15px;
             display: block; 
             text-align: center; 
-            float:left; 
-            
+            float:left;    
         }
 
+        /* On screens that are 510px wide or less, 
+        make the menu links stack on top of each other 
+        instead of next to each other
+        */
+        @media screen and (max-width: 510px) {
+            nav a {
+                float: none; 
+                width: 100%; 
+            }
+        }
+        /* On screens that are 1317px wide or more, 
+        make the menu links floating center instead of left. 
+        */
+        @media screen and (min-width: 1317px) {
+            nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            nav a {
+                float: none;
+                /* flex-direction: row;  */
+            }
+        }
+
+        
         nav a:hover {
             padding: 10px; 
             background-color: white; 
