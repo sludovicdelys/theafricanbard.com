@@ -11,56 +11,59 @@
             height: 100%;
         }
         
-/* HEADER BOX- title of the website */ 
+/* HEADERBOX- host title of website */ 
         header {
             background-color: white; 
-            text-align: center;
-            
+            text-align: center;    
         }
-/* NAVIGATION BOX- The navigation bar with chapters of the voyage*/
+
+/* NAVIGATIONBOX- The navigation bar with chapters of the voyage*/
         nav {
             overflow: hidden;
             background-color:grey; 
-            padding: 20px; 
-        
-            
+            padding: 20px;    
         }
-/* MAIN BOX- Clarissa Pinkola Estés quotes + Start reading button*/  
+
+/* MAINBOX-  Host Clarissa Pinkola Estés quotes + Start reading button*/  
         main { 
             background-color: grey; 
             text-align: center;
-            min-height: 800px ;
-            
+            min-height: 800px ;  
         }
-/* FOOTER BOX- Home button, contact button, about button*/
+
+/* FOOTERBOX- Host Home button, contact button, about button*/
         footer {
             background-color: white; 
             text-align: center; 
         }
-/* Quote */
+
+/* Website title*/
         h1 {
             font-size: 25px;
-            color: rgb(31, 73, 42); 
+            color: rgb(12, 24, 15); 
             font-family: fantasy;  
         }
 
+/* Quote title*/
         h2 {
             font-size: 25px;
             color: white;   
         }
 
+/* Quote author*/ 
         p {
             color: white; 
             font-style: italic;   
             text-align: center; 
         }
 
-
+/* All links*/
         a {
             color:white;
             font-family: 'Times New Roman', Times, serif;
         }
 
+/* Navigation links*/
         nav a {
             text-decoration: none;
             padding: 10px 12px;
@@ -71,39 +74,39 @@
             float:left;    
         }
 
-        /* On screens that are 510px wide or less, 
-        make the menu links stack on top of each other 
-        instead of next to each other
-        */
-        @media screen and (max-width: 510px) {
-            nav a {
-                float: none; 
-                width: 100%; 
-            }
+/* On screens that are 510px wide or less, 
+make the menu links stack on top of each other 
+instead of next to each other*/
+@media screen and (max-width: 510px) {
+        nav a {
+            float: none; 
+            width: 100%; 
         }
-        /* On screens that are 1317px wide or more, 
-        make the menu links floating center instead of left. 
-        */
-        @media screen and (min-width: 1317px) {
-            nav {
-                display: flex;
+    }
+
+/* On screens that are 1317px wide or more, 
+make the menu links floating center instead of left.*/
+@media screen and (min-width: 1317px) {
+        nav {
+            display: flex;
                 flex-direction: row;
                 justify-content: space-evenly;
             }
-
-            nav a {
-                float: none;
-                /* flex-direction: row;  */
+        nav a {
+            float: none;
+            /* flex-direction: row;  */
             }
         }
 
-        
+ /* Make the background white and text black 
+ when mouse hovers over navigation links */     
         nav a:hover {
             padding: 10px; 
             background-color: white; 
             color: black; 
         }
 
+/* MAINBOX links */
         main a {
             text-decoration: none; 
             font-family:fantasy; 
@@ -112,7 +115,7 @@
             color: black; 
                 
         }
-         
+/* FOOTERBOX links*/         
         footer a {
             font-size: 20px; 
             font-family:'Courier New', Courier, monospace;
@@ -120,12 +123,11 @@
             color: black;   
         }
         
-        
-
         </style>
+
     </head>
     <body>
-
+        
     <header>
         <h1><strong>An African Quest in Venezuela</strong></h2>
      </header>
