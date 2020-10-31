@@ -20,16 +20,43 @@
 /* NAVIGATIONBOX- The navigation bar with chapters of the voyage*/
         nav {
             overflow: hidden;
-            background-color:grey; 
+            background-color:rgba(15, 74, 141, 0.671); 
             padding: 20px;    
         }
 
 /* MAINBOX-  Host Clarissa Pinkola Estés quotes + Start reading button*/  
         main { 
+            background-image: url(DJI_0010.png);
+            background-size: 105%;
+            background-position: center;
+            background-repeat: no-repeat; 
             background-color: grey; 
             text-align: center;
-            min-height: 800px ;  
+            min-height: 800px;  
         }
+/* On screens that are 1342px or less, 
+make the backround-image size bigger.*/
+@media screen and (max-width: 1342px) {
+        main {
+            background-size: 200%; 
+        }
+    }
+/* On screens that are 800px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 800px) {
+    main {
+        background-size: 250%; 
+    }
+}
+/* On screens that are 500px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 500px) {
+    main {
+        background-size: 300%; 
+    }
+}
+
+
 
 /* FOOTERBOX- Host Home button, contact button, about button*/
         footer {
@@ -127,7 +154,7 @@ make the menu links floating center instead of left.*/
 
     </head>
     <body>
-        
+
     <header>
         <h1><strong>An African Quest in Venezuela</strong></h2>
      </header>
