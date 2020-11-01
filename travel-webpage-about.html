@@ -84,7 +84,13 @@ make the background-image size bigger.*/
                 font-family: fantasy;
                 font-size: 25px; 
                 color: white;
-                padding-top: 20%;  
+                padding-top: 10%;  
+            }
+/* On screens that are 644px wide or less, 
+change the font size and the padding.*/
+            main h2 {
+                font-size: 20px; 
+                padding-top: 9%; 
             }
 
 /* Text of about page */
@@ -93,7 +99,22 @@ make the background-image size bigger.*/
                 text-align: center;
                 font-family: fantasy; 
                 font-size: 15px; 
+                margin-left: 100px;
+                margin-right: 100px; 
+            
             }
+
+/* On screens that are 644px wide or less,
+make the margins smaller for the text
+and change font size*/
+@media screen and (max-width: 644px) {
+            p {
+                margin-left: 50px; 
+                margin-right: 50px; 
+                font-size: 14px; 
+            }
+}
+
 
 /* All links */ 
             a {
