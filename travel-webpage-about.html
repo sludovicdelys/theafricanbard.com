@@ -33,49 +33,73 @@
 /* MAINBOX- Host text about website project*/ 
             main {
                 background-image: url(DJI_0001.png);
-                background-size: 100%; 
+                background-size: 105%; 
                 background-position: center; 
                 background-repeat: no-repeat; 
                 background-color:rgba(126, 11, 91, 0.404);
                 text-align: center; 
-                min-height: 800px; 
-                
+                min-height: 800px;
             }
 
+/* On screens that are 1342px or less,
+make the background-image size bigger. */ 
+@media screen and (max-width: 1030px) {
+    main {
+        background-size: 200%; 
+        
+    }
+}
+
+/* On screens that are 800px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 800px) {
+    main {
+        background-size: 230%; 
+    }
+}
+
+/* On screens that are 500px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 500px) {
+    main {
+        background-size: 260%; 
+    }
+}
+
+/* FOOTERBOX- Host Home button, contact button, about button */
             footer {
-                background-color: white; 
-                padding: 20px; 
+                background-color: white;  
                 text-align: center; 
             }
 
+/* About page title */ 
             h1 {
                 font-size: 25px; 
                 color:black; 
                 font-family: fantasy; 
             }
 
+/* Title of the about text */ 
             h2 {
                 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                font-size: 25px; 
+                font-size: 15px; 
                 color: white; 
             }
-
+/* Artwork by */ 
             h3 {
-                font-size: 20px; 
+                font-size: 10px; 
                 color: white; 
                 font-family: fantasy;  
                 
             }
-
+/* Text of about page */
             p {
                 color: white; 
                 text-align: center;
-                padding: 20px; 
-                margin-left: 18%; 
-                margin-right: 18%; 
+                padding: 20px;  
                 line-height: 1.0; 
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-                font-size: 20px; 
+                font-size: 13px; 
             }
 
             a {
