@@ -27,13 +27,37 @@
 /* MAINBOX -Host text about current chapter */ 
         main{ 
             background-image: url(firstchapter.png);
+            background-color:brown; 
             background-size: 105%; 
             background-position: center; 
             background-repeat: no-repeat; 
             text-align: center; 
             min-height: 800px; 
         }
+/* On screens that are 1342px or less,
+make the background-image size bigger. */ 
+@media screen and (max-width: 1030px) {
+    main {
+        background-size: 230%; 
+        
+    }
+}
 
+/* On screens that are 800px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 800px) {
+    main {
+        background-size: 260%; 
+    }
+}
+
+/* On screens that are 500px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 500px) {
+    main {
+        background-size: 600%; 
+    }
+}
         footer{
             background-color: white; 
             padding: 20px; 
