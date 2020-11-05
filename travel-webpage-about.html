@@ -226,11 +226,18 @@ when mouse hovers over navigation links */
             .kramm-logo {
                 width: 150px; 
             }
-/* On screens that are 1440 or more 
+/* On screens that are 1440px wide or more 
 make the logo wider */ 
 @media screen and (min-width: 1440px) {
             .kramm-logo {
                 width: 200px; 
+            }
+}
+/* On screens that are 700px wide or less 
+make the logo smaller */ 
+@media screen and (max-width: 700px) {
+            .kramm-logo {
+                width: 100px; 
             }
 }
 
@@ -267,8 +274,11 @@ make the logo wider */
                      All the content as well as the webpage itself is my own work. I hope to inspire, but most importantly I hope it encourages you, the reader, to rediscover yourself and redefine your talents, skills and sense of self. 
                 </p>
 
-                <h3>Artworks by</h3> <img class="kramm-logo" src="Kramm-logo.png" alt="Kramm & Co Logo for digital artworks" >
-                
+                <h3>Artworks by</h3> 
+
+                <a href="https://krammandco.wixsite.com/welcome">
+                <img class="kramm-logo" src="Kramm-logo.png" alt="Kramm & Co Logo for digital artworks" >
+                </a>
 
                 </main>
 
