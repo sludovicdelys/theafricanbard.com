@@ -1,275 +1,286 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>An African Quest</title>
 
-        <style>
-            html {
-                height: 100%;
-            }
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>An African Quest</title>
+
+    <style>
+        html {
+            height: 100%;
+        }
 
 
-/* HEADERBOX -host title of about page*/
-            header {
-                background-color: white; 
-                text-align: center; 
-            }
+        /* HEADERBOX -host title of about page*/
+        header {
+            background-color: white;
+            text-align: center;
+        }
 
-/* NAVIGATIONBOX -The navigation with chapters of the journey*/
-            nav {
-                overflow: hidden; 
-                background-color:  rgba(15, 51, 14, 0.541); 
-                padding: 20px; 
-            }
-/* MAINBOX- Host text about website project*/ 
+        /* NAVIGATIONBOX -The navigation with chapters of the journey*/
+        nav {
+            overflow: hidden;
+            background-color: rgba(15, 51, 14, 0.541);
+            padding: 20px;
+        }
+
+        /* MAINBOX- Host text about website project*/
+        main {
+            background-image: url(DJI_0089.png);
+            background-size: 105%;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            min-height: 800px;
+        }
+
+        /* On screens that are 1342px or less,
+make the background-image size bigger. */
+        @media screen and (max-width: 1030px) {
             main {
-                background-image: url(DJI_0089.png);
-                background-size: 105%; 
-                background-position: center; 
-                background-repeat: no-repeat; 
-                text-align: center; 
-                min-height: 800px;
+                background-size: 230%;
+
             }
+        }
 
-/* On screens that are 1342px or less,
-make the background-image size bigger. */ 
-@media screen and (max-width: 1030px) {
-    main {
-        background-size: 230%; 
-        
-    }
-}
-
-/* On screens that are 800px or less, 
+        /* On screens that are 800px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 800px) {
-    main {
-        background-size: 260%; 
-    }
-}
+        @media screen and (max-width: 800px) {
+            main {
+                background-size: 260%;
+            }
+        }
 
-/* On screens that are 500px or less, 
+        /* On screens that are 500px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 500px) {
-    main {
-        background-size: 600%; 
-    }
-}
-
-/* FOOTERBOX- Host Home button, contact button, about button */
-            footer {
-                background-color: white;  
-                text-align: center;
-                padding: 20px; 
+        @media screen and (max-width: 500px) {
+            main {
+                background-size: 600%;
             }
+        }
 
-/* About page title */ 
-            h1 {
-                font-size: 25px; 
-                color:black; 
-                font-family: fantasy; 
-            }
+        /* FOOTERBOX- Host Home button, contact button, about button */
+        footer {
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+        }
 
-/* Title of the about text */ 
+        /* About page title */
+        h1 {
+            font-size: 25px;
+            color: black;
+            font-family: fantasy;
+        }
+
+        /* Title of the about text */
+        main h2 {
+            font-family: fantasy;
+            font-size: 25px;
+            color: white;
+            padding-top: 10%;
+        }
+
+        /* On screens that are 644px wide or less, 
+change the font size and the padding.*/
+        @media screen and (max-width: 644px) {
             main h2 {
-                font-family: fantasy;
-                font-size: 25px; 
-                color: white;
-                padding-top: 10%;  
+                font-size: 18px;
+                padding-top: 5%;
             }
+        }
 
-/* On screens that are 644px wide or less, 
+        /* On screens that are 1440px wide or more, change the font size*/
+        @media screen and (min-width: 1440px) {
+            main h2 {
+                font-size: 25px;
+                padding-top: 10%;
+            }
+        }
+
+        /* Digital artworks by...*/
+        main h3 {
+            font-family: fantasy;
+            font-size: 20px;
+            color: white;
+            padding-top: 10%;
+        }
+
+        /* On screens that are 644px wide or less, 
 change the font size and the padding.*/
-@media screen and (max-width: 644px) {
-    main h2 {
-                font-size: 18px; 
-                padding-top: 5%; 
+        @media screen and (max-width: 644px) {
+            main h3 {
+                font-size: 18px;
+                padding-top: 5%;
             }
-}
-            
-/* On screens that are 1440px wide or more, change the font size*/ 
-@media screen and (min-width: 1440px) {
-    main h2 {
-                font-size: 25px; 
-                padding-top: 10%; 
-    }
-}
-/* Digital artworks by...*/
-    main h3 {
-        font-family: fantasy;
-                font-size: 20px; 
-                color: white;
-                padding-top: 10%;  
-    }
+        }
 
-/* On screens that are 644px wide or less, 
-change the font size and the padding.*/
-@media screen and (max-width: 644px) {
-    main h3 {
-                font-size: 18px; 
-                padding-top: 5%; 
+        /* On screens that are 1440px wide or more, change the font size*/
+        @media screen and (min-width: 1440px) {
+            main h3 {
+                font-size: 20px;
+                padding-top: 10%;
             }
-}
-            
-/* On screens that are 1440px wide or more, change the font size*/ 
-@media screen and (min-width: 1440px) {
-    main h3 {
-                font-size: 20px; 
-                padding-top: 10%; 
-    }
-}
+        }
 
-/* Text of about page */
-            p {
-                color: white; 
-                text-align: center;
-                font-family: fantasy; 
-                font-size: 15px; 
-                margin-left: 100px;
-                margin-right: 100px; 
-            
-            }
+        /* Text of about page */
+        p {
+            color: white;
+            text-align: center;
+            font-family: fantasy;
+            font-size: 15px;
+            margin-left: 100px;
+            margin-right: 100px;
 
-/* On screens that are 644px wide or less,
+        }
+
+        /* On screens that are 644px wide or less,
 make the margins smaller for the text
 and change font size*/
-@media screen and (max-width: 644px) {
+        @media screen and (max-width: 644px) {
             p {
-                margin-left: 50px; 
-                margin-right: 50px; 
-                font-size: 12px; 
+                margin-left: 50px;
+                margin-right: 50px;
+                font-size: 12px;
             }
-}
+        }
 
-/* On screens that are 1440px wide or more, change the font size*/ 
-@media screen and (min-width: 1440px) {
+        /* On screens that are 1440px wide or more, change the font size*/
+        @media screen and (min-width: 1440px) {
             p {
-                margin-left: 50px; 
-                margin-right:50px; 
-                font-size: 15px; 
-                
-    }
-}
+                margin-left: 50px;
+                margin-right: 50px;
+                font-size: 15px;
 
-/* All links */ 
-            a {
-                color:white; 
-                font-family: 'Times New Roman', Times, serif; 
             }
+        }
 
-/* Navigation links */ 
-            nav a {
-                color: white; 
-                text-decoration: none; 
-                padding: 10px 12px; 
-                font-family: 'Courier New', Courier, monospace;
-                font-size: 15px; 
-                display: block; 
-                text-align: center; 
-                float: left; 
-            }
-/* On screens that are 510px wide or less, 
+        /* All links */
+        a {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Navigation links */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            display: block;
+            text-align: center;
+            float: left;
+        }
+
+        /* On screens that are 510px wide or less, 
 make the menu links stack on top of each other 
 instead of next to each other*/
-@media screen and (max-width: 510px) {
-        nav a {
-            float: none; 
-            width: 100%; 
+        @media screen and (max-width: 510px) {
+            nav a {
+                float: none;
+                width: 100%;
+            }
         }
-    }
 
-/* On screens that are 1317px wide or more, 
+        /* On screens that are 1317px wide or more, 
 make the menu links floating center instead of left.*/
-@media screen and (min-width: 1317px) {
-        nav {
-            display: flex;
+        @media screen and (min-width: 1317px) {
+            nav {
+                display: flex;
                 flex-direction: row;
                 justify-content: space-evenly;
             }
-        nav a {
-            float: none;
-            /* flex-direction: row;  */
+
+            nav a {
+                float: none;
+                /* flex-direction: row;  */
             }
         }
 
-/* Make the background white and text black 
+        /* Make the background white and text black 
 when mouse hovers over navigation links */
-            nav a:hover {
-                background-color: white; 
-                color: black; 
-            }
+        nav a:hover {
+            background-color: white;
+            color: black;
+        }
 
-/* MAINBOX links */ 
-            main a {
-                text-decoration: none; 
-                font-family: fantasy; 
-                font-size: 25px; 
-                font-weight: bold; 
-                color: black; 
-            }
-/* FOOTERBOX links */ 
-            footer a {
-                text-decoration: none; 
-                font-size: 20px; 
-                font-family: 'Courier New', Courier, monospace;
-                padding: 20px; 
-                color: black; 
-            }
-/* Change the background color when 
-mouse hovers footer links*/ 
-            footer a:hover {
-                background-color:rgba(15, 51, 14, 0.541); 
-                color: white; 
-            }
+        /* MAINBOX links */
+        main a {
+            text-decoration: none;
+            font-family: fantasy;
+            font-size: 25px;
+            font-weight: bold;
+            color: black;
+        }
 
-            </style>
-        </head>
-        <body>
+        /* FOOTERBOX links */
+        footer a {
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            color: black;
+        }
 
-            <header>
-                <h1>An African Quest in Venezuela</h1>
-            </header>
+        /* Change the background color when 
+mouse hovers footer links*/
+        footer a:hover {
+            background-color: rgba(15, 51, 14, 0.541);
+            color: white;
+        }
+    </style>
+</head>
 
-            <nav>
-                <a href="travel-webpage-chapter1.html#across-ocean">ACROSS THE OCEAN</a>
-                <a href="#">BAD HAIR</a>
-                <a href="#">THE HUMANITARIAN</a>
-                <a href="#">CITY DRIVE</a>
-                <a href="#">CLENCHED FIST</a>
-                <a href="#">KIDNAPPING BUSINESS</a>
-                <a href="#">UNDERVALUED HERO</a>
-                <a href="#">FROM HERE</a>
-                <a href="#">DIVERSITY</a> 
-            </nav>
+<body>
 
-            <main>
+    <header>
+        <h1>An African Quest in Venezuela</h1>
+    </header>
 
-            <form id="contactform">
-                <div class="input_field">
-                    <input type="text" placeholder="Name" id="name">
-                <div class="input_field">
+    <nav>
+        <a href="travel-webpage-chapter1.html#across-ocean">ACROSS THE OCEAN</a>
+        <a href="#">BAD HAIR</a>
+        <a href="#">THE HUMANITARIAN</a>
+        <a href="#">CITY DRIVE</a>
+        <a href="#">CLENCHED FIST</a>
+        <a href="#">KIDNAPPING BUSINESS</a>
+        <a href="#">UNDERVALUED HERO</a>
+        <a href="#">FROM HERE</a>
+        <a href="#">DIVERSITY</a>
+    </nav>
+
+    <main>
+
+        <form id="contactform">
+            <div class="input_field">
+                <input type="text" placeholder="Name" id="name">
+            </div>
+            <div class="input_field">
                     <input type="text" placeholder="Subject" id="subject">
-                <div class="input_field">
-                    <input type="text" placeholder="Email" id="email">
-                <div class="input_field">
-                    <textarea type="text" placeholder="Message" id="message"></textarea>
-                    
-                </div>>
+            </div>
+            <div class="input_field">
+                        <input type="text" placeholder="Email" id="email">
+            </div>
+            <div class="input_field">
+                            <textarea type="text" placeholder="Message" id="message"></textarea>
+            </div>
 
-            </main>
+        </form>
+    </main>
 
-            
 
-            </form>
-                
 
-            <footer>
-                <a href="index.html">HOME</a>
-                <a href="travel-webpage-about.html">ABOUT</a>
-                <a href="travel-webpage-contact.html">CONTACT</a>  
-            </footer>
-        
-        </body>
+    
+
+
+    <footer>
+        <a href="index.html">HOME</a>
+        <a href="travel-webpage-about.html">ABOUT</a>
+        <a href="travel-webpage-contact.html">CONTACT</a>
+    </footer>
+
+</body>
+</html>
