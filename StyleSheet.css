@@ -171,6 +171,10 @@ footer a {
     color: black;
 }
 
+/* Strikethrough for chapters that are not available*/
+.notavailable {
+    text-decoration: line-through;
+}
 /* Change the background color when 
 mouse hovers footer links */ 
 footer a:hover { 
@@ -180,5 +184,4 @@ footer a:hover {
 /* Change cursor to default if the chapters are not available*/
 .notavailable:hover {
     cursor:not-allowed;
-    text-decoration: line-through; 
 }
