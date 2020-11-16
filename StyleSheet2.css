@@ -18,35 +18,35 @@ nav{
 main{ 
     background-image: url(Bad\ Hair\ Final\ 1.png);
     background-color: white; 
-    background-size: 110%; 
+    background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat;  
     text-align: center; 
-    min-height: 600px;
+    min-height: 400px;
     
 }
-/* On screens that are 1342px or less,
+/* On screens that are 1342px or more,
 make the background-image size bigger. */ 
-@media screen and (max-width: 1030px) {
+@media screen and (min-width: 1000px) {
 main {
-background-size: 110%; 
+background-size: 105%; 
 
 }
 }
 
 /* On screens that are 800px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 main {
-background-size: 115%; 
+background-size: 110%; 
 }
 }
 
 /* On screens that are 500px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
 main {
-background-size: 120%; 
+background-size: 135%; 
 }
 }
 /* ARTICLEBOX -Host article*/
