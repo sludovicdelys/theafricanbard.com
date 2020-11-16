@@ -88,9 +88,9 @@ make the margins smaller for the text
 and change font size*/
 @media screen and (max-width: 644px) {
     p {
-        margin-left: 50px; 
-        margin-right: 50px; 
-        font-size: 12px; 
+        margin-left: 40px; 
+        margin-right: 40px; 
+        font-size: 13px; 
     }
 }
 
