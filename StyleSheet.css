@@ -179,5 +179,6 @@ footer a:hover {
 }
 /* Change cursor to default if the chapters are not available*/
 .notavailable:hover {
-    cursor:not-allowed; 
+    cursor:not-allowed;
+    text-decoration: line-through; 
 }
