@@ -1,24 +1,19 @@
 //*THE SERVER*//
 
-//Importing express
+// import environment variable 
+require('dotenv').config();
 const express = require('express');
-
-//Importing router
-//const router = require('./app/router');
-
-//Importing array of articles
+const router = require('./app/router');
 const articles = require('./data/article.json');
 
-//We allow the user to change the port number any time by using a variable 
-const PORT = 3000;
+//The port is located in the .env, if no access choose default port 5000
+const PORT = process.env.PORT || 5000;
 
 //Setting up a new express server
 const app = express();
 
 //Views usage settings:
-// - EJS engine
 app.set('view engine', 'ejs');
-// - folder for the files
 app.set('views', 'views');
 
 // Static files (css et js-front) are in the folder "static"
