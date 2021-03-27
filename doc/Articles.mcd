@@ -1,0 +1,3 @@
+ARTICLE: title, description, image, text, country
+POSSESS, 0N ARTICLE, 1N COUNTRY
+COUNTRY: name, color
