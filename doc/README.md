@@ -27,3 +27,4 @@ Il faudrait plutôt stocker les images dans un dossier et les chemins vers ces i
 "Images can get quite large, greater than 1MB. And so storing images in a database can potentially put unnecessary load on your database and the network between your database and your web server if they're on different hosts".
 [Stackoverflow](https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql)
 
+Les base de données d'aujourd'hui sont tout à fait capable de stocker de grandes images, mais je choisis de stocker les images enregistrées par l'administrateur dans un dossier images, qui sera ensuite ajouter a la base de données. 
