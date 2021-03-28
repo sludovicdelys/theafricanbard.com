@@ -13,7 +13,7 @@ CREATE TABLE "article" (
     "id" SERIAL PRIMARY KEY, 
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "image" VARCHAR NOT NULL,
+    "image_path" VARCHAR(255) NOT NULL,
     "text" TEXT NOT NULL,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMPTZ NULL
@@ -34,4 +34,7 @@ CREATE TABLE "article_has_country" (
     "country_id" INT NOT NULL REFERENCES "article"("id"),
     PRIMARY KEY ("article_id", "country_id")
 );
+
+-- Seeding : remplissage des tables avec des données fictives
+
 
