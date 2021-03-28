@@ -15,6 +15,15 @@
 
 - Bonus: un utilisateur peut acheter une photo dans la boutique en ligne
 
+## Notes 
 
+### Des images dans la BDD ?
 
+_28 Mars 2020_
+
+Il est possible de stocker des images dans la BDD mais ce n'est pas une bonne pratique. 
+Il faudrait plutôt stocker les images dans un dossier et les chemins vers ces images dans la base de données. 
+
+"Images can get quite large, greater than 1MB. And so storing images in a database can potentially put unnecessary load on your database and the network between your database and your web server if they're on different hosts".
+[Stackoverflow](https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql)
 
