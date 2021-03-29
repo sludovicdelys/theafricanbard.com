@@ -10,7 +10,7 @@ class Article extends Model {};
 // Configure la classe
 Article.init({
     title: DataTypes.TEXT, 
-    image: DataTypes.STRING,
+    image_path: DataTypes.STRING,
     text: DataTypes.TEXT
 
 }, {
