@@ -221,6 +221,31 @@ I am an African. There was no doubt in my mind about it. I was born there, tailo
 I spent the ride in quiet contemplation. The next day, I would board a plane and I might never see these big green mountains again. I would talk about all these people that I met as if they were characters from a mysterious book. I would trivially keep contact through the internet, but I might not feel the weight or lightness of their daily lives. I would continue to be just a visitor, like wind passing by. Our memories of each other would vividly stay or they might get blurred by the time we spent separated. No matter what, we would still be who we are. We could always hold on to that. Our honest intricate lives.'
 );
 
+INSERT INTO "country" ("id", "name", "color") VALUES 
+(1, 
+'Venezuela',  
+'#1515E4 '
+),
+(2, 
+'Burkina Faso', 
+'#227B22'
+),
+(3, 
+'Tunisia', 
+'#D82121'
+);
+
+INSERT INTO "article_has_country" ("article_id", "country_id") VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+(6,1),
+(7,1),
+(8,1),
+(9,1);
+
 
 
 
