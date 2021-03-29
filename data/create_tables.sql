@@ -23,7 +23,7 @@ CREATE TABLE "article" (
 CREATE TABLE "country" (
     "id" SERIAL PRIMARY KEY, 
     "name" TEXT NOT NULL,
-    "color" TEXT NOT NULL,
+    "color" TEXT NOT NULL
 );
 
 /* Création de la table "article_has_country"*/
@@ -246,7 +246,12 @@ INSERT INTO "article_has_country" ("article_id", "country_id") VALUES
 (8,1),
 (9,1);
 
+-- Remettre à jours la numérotation automatique de postgres pour éxecuter le script plusieurs fois sans incohérences
 
+SELECT setval ('article_id_seq', (SELECT MAX(id) from "article"));
+SELECT setval ('country_id_seq', (SELECT MAX(id) from "country"));
+
+COMMIT; 
 
 
 
