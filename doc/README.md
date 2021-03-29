@@ -28,3 +28,8 @@ Il faudrait plutôt stocker les images dans un dossier et les chemins vers ces i
 [Stackoverflow](https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql)
 
 Les base de données d'aujourd'hui sont tout à fait capable de stocker de grandes images, mais je choisis de stocker les images enregistrées par l'administrateur dans un dossier images, qui sera ensuite ajouter a la base de données. 
+
+_29 Mars 2020_
+
+J'aimerais pouvoir importer dans ma table un fichier qui contient le texte de mon blog. Écrire tout le texte dans ma requête SQL rends mon code illisible, ce qui n'est pas optimale. 
+
