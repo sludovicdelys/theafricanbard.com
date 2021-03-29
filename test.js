@@ -1,7 +1,5 @@
 /*Fichier test pour vérifier que tout fonctionne*/
 
-require('dotenv').config();
-
 // Importer les modèles
 const { Article, Country } = require('./app/models/');
 //const {Country} = require('./app/models/');
