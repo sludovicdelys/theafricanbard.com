@@ -29,14 +29,12 @@ CREATE TABLE "country" (
 /* Création de la table "article_has_country"*/
 
 CREATE TABLE "article_has_country" (
-    "article_id" INT NOT NULL REFERENCES "country"("id"), 
-    "country_id" INT NOT NULL REFERENCES "article"("id"),
+    "article_id" INT NOT NULL REFERENCES "article"("id") ON DELETE CASCADE, 
+    "country_id" INT NOT NULL REFERENCES "country"("id") ON DELETE CASCADE,
     PRIMARY KEY ("article_id", "country_id")
 );
 
-
 -- SEEDING : remplissage des tables avec des données fictives
-
 
 INSERT INTO "article" ("id", "title", "image_path", "text") VALUES
 (1, 
@@ -236,15 +234,15 @@ INSERT INTO "country" ("id", "name", "color") VALUES
 );
 
 INSERT INTO "article_has_country" ("article_id", "country_id") VALUES
-(1,1),
-(2,1),
-(3,1),
-(4,1),
-(5,1),
-(6,1),
-(7,1),
-(8,1),
-(9,1);
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 1),
+(9, 1);
 
 -- Remettre à jours la numérotation automatique de postgres pour éxecuter le script plusieurs fois sans incohérences
 
