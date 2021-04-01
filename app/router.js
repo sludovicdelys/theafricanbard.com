@@ -4,8 +4,8 @@ const router = express.Router();
 // Importer les controllers
 
 const articleController = require('./controllers/articleController');
-const countryController = require('./controllers/countryController');
-const associationController = require('./controller/associationController');
+// const countryController = require('./controllers/countryController');
+// const associationController = require('./controller/associationController');
 
 
 
@@ -24,3 +24,5 @@ router.get('/articles', articleController.findAll);
 
 
 // Ajouter un article en tant que admin 
+
+module.exports = router; 
