@@ -23,9 +23,8 @@ CREATE TABLE "article" (
 CREATE TABLE "country" (
     "id" SERIAL PRIMARY KEY, 
     "name" TEXT NOT NULL,
-    "color" TEXT NOT NULL,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    "updated_at" TIMESTAMPTZ null
+    "color" TEXT NOT NULL
+   
 );
 
 /* Création de la table "article_has_country"*/
@@ -33,8 +32,6 @@ CREATE TABLE "country" (
 CREATE TABLE "article_has_country" (
     "article_id" INT NOT NULL REFERENCES "article"("id") ON DELETE CASCADE, 
     "country_id" INT NOT NULL REFERENCES "country"("id") ON DELETE CASCADE,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    "updated_at" TIMESTAMPTZ null
     PRIMARY KEY ("article_id", "country_id")
 );
 

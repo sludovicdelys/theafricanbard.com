@@ -1,10 +1,11 @@
-const {Article} = require('../models');
+const {Article, Country} = require('../models');
 
 module.exports = {
     findAll: async (request, response) => {
         try {
             const articles = await Article.findAll({
-                include: 'countries'});
+                include: "countries"},);
+                // include: [{association: 'country'}]});
             response.json(articles);
         } catch (error) {
             console.error(error);

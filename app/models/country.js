@@ -14,6 +14,9 @@ Country.init({
 
 }, {
     sequelize,
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
     tableName: 'country'
 });
 
