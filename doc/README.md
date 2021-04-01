@@ -19,17 +19,27 @@
 
 ### Des images dans la BDD ?
 
-_28 Mars 2020_
+_28 Mars 2021_
 
-Il est possible de stocker des images dans la BDD mais ce n'est pas une bonne pratique. 
+- Il est possible de stocker des images dans la BDD mais ce n'est pas une bonne pratique. 
 Il faudrait plutôt stocker les images dans un dossier et les chemins vers ces images dans la base de données. 
 
-"Images can get quite large, greater than 1MB. And so storing images in a database can potentially put unnecessary load on your database and the network between your database and your web server if they're on different hosts".
+- "Images can get quite large, greater than 1MB. And so storing images in a database can potentially put unnecessary load on your database and the network between your database and your web server if they're on different hosts".
 [Stackoverflow](https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql)
 
-Les base de données d'aujourd'hui sont tout à fait capable de stocker de grandes images, mais je choisis de stocker les images enregistrées par l'administrateur dans un dossier images, qui sera ensuite ajouter a la base de données. 
+- Les base de données d'aujourd'hui sont tout à fait capable de stocker de grandes images, mais je choisis de stocker les images enregistrées par l'administrateur dans un dossier images, qui sera ensuite ajouter a la base de données. 
 
-_29 Mars 2020_
+### Il y a beaucoup de textes dans ma requête SQL
 
-J'aimerais pouvoir importer dans ma table un fichier qui contient le texte de mon blog. Écrire tout le texte dans ma requête SQL rends mon code illisible, ce qui n'est pas optimale. 
+_29 Mars 2021_
+
+- J'aimerais pouvoir importer dans ma table un fichier qui contient le texte de mon blog. Écrire tout le texte dans ma requête SQL rends mon code illisible, ce qui n'est pas optimale. 
+
+- Rien à faire, le fichier SQL n'est pas censé être 'beau'. Il faut que j'écrive tout les paragraphes de mes articles dans ma transaction SQL. 
+
+### Pouvoir récupérer la colonne country_id dans ma requêtes des articles
+
+_01 Avril 2021_
+
+- Dans mon controller ```articleController``` je récupère tout mes articles sur la route ```'/articles'```, mais je ne récupère les pays auxquelles ils correspondent. 
 
