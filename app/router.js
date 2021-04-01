@@ -13,7 +13,7 @@ const articleController = require('./controllers/articleController');
 router.get('/articles', articleController.findAll);
 
 // Récupérer un article 
-// router.get('/articles/:id', articleController.findOne);
+router.get('/articles/:id', articleController.findOne);
 
 
 // Récupérer tout les pays 
