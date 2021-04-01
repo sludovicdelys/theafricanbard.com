@@ -4,7 +4,7 @@ const router = express.Router();
 // Importer les controllers
 
 const articleController = require('./controllers/articleController');
-// const countryController = require('./controllers/countryController');
+const countryController = require('./controllers/countryController');
 // const associationController = require('./controller/associationController');
 
 
@@ -17,7 +17,7 @@ router.get('/articles/:id', articleController.findOne);
 
 
 // Récupérer tout les pays 
-// router.get('/countries', countryController.findAll);
+router.get('/countries', countryController.findAll);
 
 // Récupérer tout les articles d'un pays 
 // router.get('/countries/:countryId/articles')
