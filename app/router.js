@@ -5,7 +5,7 @@ const router = express.Router();
 
 const articleController = require('./controllers/articleController');
 const countryController = require('./controllers/countryController');
-const userController = require('./controllers/userController');
+const adminController = require('./controllers/adminController');
 
 
 // Récupérer tous les articles
@@ -20,6 +20,9 @@ router.get('/countries', countryController.findAll);
 
 // Récupérer tout les articles d'un pays 
 router.get('/countries/:countryId/articles', countryController.findOne);
+
+// Afficher la page le formulaire de connexion
+router.get('/login',  adminController.showLoginForm);
 
 
 module.exports = router; 
