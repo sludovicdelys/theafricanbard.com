@@ -5,6 +5,7 @@ const router = express.Router();
 
 const articleController = require('./controllers/articleController');
 const countryController = require('./controllers/countryController');
+const userController = require('./controllers/userController');
 
 
 
