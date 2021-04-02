@@ -3,6 +3,7 @@ const { Article, Country } = require('../models');
 
 module.exports = {
 
+    // Méthode qui récupère tous les articles avec les pays associés 
     findAll: async (request, response) => {
         try {
             const articles = await Article.findAll({
@@ -15,6 +16,7 @@ module.exports = {
         }
     },
 
+    // Méthode qui récupère un article avec les pays associés 
     findOne: async (request, response) => {
         try {
             articleId = request.params.id;
