@@ -6,7 +6,10 @@ const router = express.Router();
 const articleController = require('./controllers/articleController');
 const countryController = require('./controllers/countryController');
 const adminController = require('./controllers/adminController');
+const mainController = require('./controllers/mainController.js');
 
+// Afficher la page d'accueil 
+router.get('/', mainController.showHomePage);
 
 // Récupérer tous les articles
 router.get('/articles', articleController.findAll);

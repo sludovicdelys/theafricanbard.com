@@ -16,9 +16,11 @@ app.set('views', './app/views');
 // Récupérer les infos envoyées en POST
 app.use(express.urlencoded({extended: true}));
 
+app.use(express.static('./integration/css'));
+
 app.use(router);
 
 app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+    console.log(`Server started on: http://localhost:${PORT}/`);
 });
 

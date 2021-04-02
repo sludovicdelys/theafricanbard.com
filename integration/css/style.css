@@ -1,0 +1,139 @@
+
+/** HOMEPAGE **/
+
+/*Header box*/
+    #header{
+        background-color: white; 
+        text-align: center;    
+    }
+
+/*Header title*/
+    .header_title {
+        font-size: 25px;
+        color: rgb(12, 24, 15); 
+        font-family: fantasy;
+        padding: .6em; 
+    }
+
+/*Navigation bar*/
+    .nav_index {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        background-color:rgba(0, 110, 82, 0.89); 
+        padding: 20px;    
+    }
+    
+/*Navigation links*/
+    .nav_index_links {
+        color:white;
+        text-decoration: none;
+        padding: 10px 12px;
+        font-family:'Courier New', Courier, monospace;
+        font-size: 100%;
+        display: block;  
+        text-align: center; 
+        float:left;  
+}
+
+/* On screens that are 510px wide or less, 
+make the menu links stack on top of each other 
+instead of next to each other*/
+@media screen and (max-width: 510px) {
+    .nav_index_links {
+        float: none; 
+        width: 100%; 
+    }
+}
+
+/* On screens that are 1317px wide or more, 
+make the menu links floating center instead of left.*/
+@media screen and (min-width: 1317px) {
+    .nav_index_links {
+        display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    .nav_index_links {
+        float: none;
+        /* flex-direction: row;  */
+        }
+    }
+
+/* Make the background white and text black 
+when mouse hovers over navigation links */     
+    .nav_index_links:hover {
+        padding: 10px; 
+        background-color: white; 
+        color: black; 
+    }
+
+/* Make the background white when mouse over
+main links*/
+    .nav_index_links {
+        text-decoration:underline; 
+        
+    }
+
+/*Quote box + Image*/  
+    .main_index { 
+        background-image: url(images/index.jpg);
+        background-size: 105%;
+        background-position: center;
+        background-repeat: no-repeat; 
+        text-align: center;
+        min-height: 800px;   
+          
+    }
+    /*Quote title*/
+    .main_quote {
+        font-size: 25px;
+        color: white; 
+        padding-top: 200px; 
+        font-family: fantasy; 
+    }
+
+    /*Quote author*/ 
+    .main_quote--author {
+        color: white; 
+        font-family: fantasy;
+        font-style: italic;
+        margin-bottom: 200px;              
+    
+    }
+/*MEDIA QUERIES*/
+/* On screens that are 1342px or less, 
+make the backround-image size bigger.*/
+@media screen and (max-width: 1342px) {
+    .main_index {
+        background-size: 200%; 
+    }
+}
+/* On screens that are 800px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 800px) {
+    .main_index {
+        background-size: 230%; 
+    }
+}
+/* On screens that are 500px or less, 
+make the background-image size bigger.*/
+@media screen and (max-width: 500px) {
+    .main_index {
+        background-size: 260%; 
+    }
+}
+
+                                                /*FOOTER*/
+
+/*home-contact-about buttons*/
+    .footer_index {
+        background-color: white; 
+        text-align: center; 
+        padding: 20px; 
+    }
+
+
+
+
+
