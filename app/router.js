@@ -22,5 +22,4 @@ router.get('/countries', countryController.findAll);
 router.get('/countries/:countryId/articles', countryController.findOne);
 
 
-
 module.exports = router; 

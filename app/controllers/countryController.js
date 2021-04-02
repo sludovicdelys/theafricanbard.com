@@ -15,16 +15,14 @@ module.exports = {
     },
 
     // Méthode qui récupère tous les articles d'un pays
-    
+
     findOne: async (request, response) => {
         try {
             countryId = parseInt(request.params.countryId);
 
-            console.log(`Country id is : ${countryId}`);
-
             const country = await Country.findByPk(countryId,
                 { include: 'articles' });
-            
+
             response.json(country);
         } catch (error) {
             console.error(error);
