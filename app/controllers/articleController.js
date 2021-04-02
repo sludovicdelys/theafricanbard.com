@@ -19,7 +19,7 @@ module.exports = {
     // Méthode qui récupère un article avec les pays associés 
     findOne: async (request, response) => {
         try {
-            articleId = request.params.id;
+            articleId = parseInt(request.params.id);
 
             const article = await Article.findByPk(articleId,
                 { include: 'countries' });

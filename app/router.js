@@ -16,11 +16,11 @@ router.get('/articles', articleController.findAll);
 router.get('/articles/:id', articleController.findOne);
 
 
-// Récupérer tout les pays 
+// Récupérer tout les pays sans les articles
 router.get('/countries', countryController.findAll);
 
 // Récupérer tout les articles d'un pays 
-// router.get('/countries/:countryId/articles')
+router.get('/countries/:countryId/articles', countryController.findOne);
 
 
 // Ajouter un article en tant que admin 
