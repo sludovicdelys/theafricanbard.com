@@ -5,7 +5,7 @@ const router = express.Router();
 
 const articleController = require('./controllers/articleController');
 const countryController = require('./controllers/countryController');
-// const associationController = require('./controller/associationController');
+
 
 
 
@@ -22,7 +22,10 @@ router.get('/countries', countryController.findAll);
 // Récupérer tout les articles d'un pays 
 router.get('/countries/:countryId/articles', countryController.findOne);
 
+// Afficher le formulaire d'inscription
+router.get('/signup', userController.showSignup);
 
-// Ajouter un article en tant que admin 
+// Traiter les données du formulaire d'inscription
+router.post('/signup', userController.doSignup);
 
 module.exports = router; 
