@@ -1,6 +1,31 @@
 <%- include('partials/header'); %>
 
 
+    <article class="article">
+        <div class="article-content" style="background-image: url(<%=article.image_path%>)">
+            <header class="article-header">
+                <h2 class="article-title"><%=article.title%></h2>
+                <p class="article-info">
+                    <%=article.created_at.toDateString()%>
+
+                    <% for (const country of article.countries) { %>
+                    <a href="/countries/<%=country.id%>/articles"> <%=country.name%></a>
+                    <% } %>
+                </p>
+            </header>
+            <figure>
+                <img class="article-image" src="/app/images/<%=article.image_path%>" alt="image for '<%=article.title%>' article" >
+            </figure>
+            <main class="article-description">
+                <div class="article-text">
+                    <%=article.text%>
+                </div>
+
+            </main>
+
+        </div>
+    </article>
+
 
 
 
