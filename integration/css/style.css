@@ -82,9 +82,10 @@ main links*/
         background-position: center;
         background-repeat: no-repeat; 
         text-align: center;
-        min-height: 800px;   
-          
+        min-height: 600px;      
     }
+
+
     /*Quote title*/
     .main_quote {
         font-size: 25px;
@@ -101,6 +102,7 @@ main links*/
         margin-bottom: 200px;              
     
     }
+    
 
 /*MEDIA QUERIES FOR BACKGROUNG IMAGE*/
 
