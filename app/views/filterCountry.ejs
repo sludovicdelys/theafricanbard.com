@@ -1,9 +1,9 @@
 <%- include('partials/header'); %>
 
-<h2 class="header_countries">Articles</h2>
+<h2 class="header_country"><%=country.name%></h2>
 
 <div class="main_articles_container">
-    <% for (const article of articles) { %>
+    <% for (const article of country.articles) { %>
 
     <div class="article_container">
         <a href="/articles/<%=article.id%>">
@@ -11,10 +11,12 @@
                 <strong class="article_date">Published on: <%= article.created_at.toDateString() %></strong>
             </p>
         </a>
+
     </div>
 
     <% } %>
 
 </div>
+
 
 <%- include('partials/footer'); %>

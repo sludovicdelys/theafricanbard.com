@@ -23,7 +23,7 @@ module.exports = {
             const country = await Country.findByPk(countryId,
                 { include: 'articles' });
 
-            response.json(country);
+            response.render('filterCountry', {country});
         } catch (error) {
             console.error(error);
             response.status(500).json({ error: error.message });

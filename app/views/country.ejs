@@ -5,7 +5,7 @@
 
 <% for (const country of countries) { %>
 
-<button class="button_country" href="#"><%= country.name %></button>
+<button class="button_country" onclick="window.location.href='/countries/<%=country.id%>/articles';"><%= country.name %></button>
 
 <% } %>
 
