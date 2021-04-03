@@ -1,5 +1,14 @@
 <%- include('partials/header'); %>
 
-<h2>Countries</h2>
+<h2 class="header_countries">Countries</h2>
+
+
+<% for (const country of countries) { %>
+
+<button class="button_country" href="#"><%= country.name %></button>
+
+<% } %>
+
+
 
 <%- include('partials/footer'); %>

@@ -9,7 +9,7 @@ module.exports = {
             const articles = await Article.findAll({
                 include: "countries"
             });
-            response.json(articles);
+            response.render('articles', {articles});
         } catch (error) {
             console.error(error);
             response.status(500).json({ error: error.message });

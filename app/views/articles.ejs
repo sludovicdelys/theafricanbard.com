@@ -1,0 +1,18 @@
+<%- include('partials/header'); %>
+
+<h2 class="header_countries">Articles</h2>
+
+<div class="main_articles_container">
+    <% for (const article of articles) { %>
+
+    <div class="article_container">
+        <p class="article_title"><%= article.title %> 
+            <strong class="article_date">Published on: <%= article.created_at.toDateString() %></strong>
+        </p>
+    </div>
+
+    <% } %>
+
+</div>
+
+<%- include('partials/footer'); %>
