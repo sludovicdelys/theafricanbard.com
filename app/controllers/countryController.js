@@ -7,7 +7,7 @@ module.exports = {
     findAll: async (request, response) => {
         try {
             const countries = await Country.findAll();
-            response.json(countries);
+            response.render('country', {countries});
         } catch (error) {
             console.error(error);
             response.status(500).json({ error: error.message });
