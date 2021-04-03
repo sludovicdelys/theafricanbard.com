@@ -16,7 +16,7 @@ app.set('views', './app/views');
 // Récupérer les infos envoyées en POST
 app.use(express.urlencoded({extended: true}));
 
-app.use(express.static('./static/images'));
+app.use(express.static('./app/static'));
 
 app.use(router);
 
