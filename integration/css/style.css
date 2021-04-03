@@ -78,7 +78,7 @@ main links*/
 /*Quote box + Image*/  
     .main_index { 
         background-image: url(images/index.jpg);
-        background-size: 105%;
+        background-size: 140%;
         background-position: center;
         background-repeat: no-repeat; 
         text-align: center;
@@ -101,30 +101,33 @@ main links*/
         margin-bottom: 200px;              
     
     }
-/*MEDIA QUERIES*/
+
+/*MEDIA QUERIES FOR BACKGROUNG IMAGE*/
+
 /* On screens that are 1342px or less, 
 make the backround-image size bigger.*/
-@media screen and (max-width: 1342px) {
+@media screen and (max-width: 1165px) {
     .main_index {
-        background-size: 200%; 
+        background-size: 240%; 
     }
 }
 /* On screens that are 800px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 853px) {
     .main_index {
-        background-size: 230%; 
+        background-size: 280%; 
     }
 }
 /* On screens that are 500px or less, 
 make the background-image size bigger.*/
 @media screen and (max-width: 500px) {
     .main_index {
-        background-size: 260%; 
+        background-size: 300%; 
     }
 }
 
                                                 /*FOOTER*/
+
 
 /*home-contact-about buttons*/
     .footer_index {
