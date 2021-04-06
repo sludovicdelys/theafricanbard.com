@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const express = require('express');
 const router = require('./app/router');
+const session = require('express-session');
 
 const app = express();
 
@@ -12,6 +13,13 @@ const PORT = process.env.PORT || 3000;
 // Configuration EJS comme moteur de template
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
+
+// Gérer les sessions
+app.use(session({
+    secret: 'topsecretstuffyoucantsee',
+    resave: false,
+    saveUninitialized: false
+}));
 
 // Récupérer les infos envoyées en POST
 app.use(express.urlencoded({extended: true}));

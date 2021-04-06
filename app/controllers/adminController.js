@@ -1,5 +1,5 @@
-const { response, request } = require('express');
-const database = require('../database');
+const { response } = require('express');
+const { Article, Country } = require('../models');
 
 module.exports = {
     // Méthode qui affiche la page de connexion
@@ -16,7 +16,7 @@ module.exports = {
 
         if (login === 'admin' && password === 'anafricanquestinvenezuela2019*') {
             request.session.isUserLogged = true;
-            response.send('Connexion successful!');
+            response.redirect('http://localhost:3000/article/add');
         } else {
             response.send('Oops we got a problem! Try again!');
         }
