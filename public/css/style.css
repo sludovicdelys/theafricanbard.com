@@ -1,4 +1,8 @@
 
+body {
+    font-family: 'Vollkorn', serif;
+}
+
 /** HOMEPAGE **/
 
 /*Header box*/
@@ -8,16 +12,20 @@
         display: flex;
         align-items: flex-end;
         justify-content:space-between;
-        padding: 5px; 
-          
+
+            
+    }
+
+    #header a {
+        color: black
     }
 
 /*Header title*/
     .header_title {
-        font-size: 25px;
+        font-size: 2em;
         color: rgb(12, 24, 15); 
-        font-family: fantasy;
         align-self: flex-end;
+       
     }
 
 
@@ -27,13 +35,18 @@
         justify-content: center;
         overflow: hidden;
         background-color:rgba(0, 110, 82, 0.89); 
-        padding: 20px;    
+        padding: 20px; 
+        
     }
     
 /*Navigation links*/
+    .nav_index a {
+        text-decoration: none; 
+        font-family: 'Vollkorn', serif;  
+    }
     .nav_index_links {
         color:white;
-        text-decoration: none;
+       
         padding: 10px 12px;
         font-family:'Courier New', Courier, monospace;
         font-size: 100%;
@@ -146,5 +159,61 @@ make the background-image size bigger.*/
 
 
 
+/** LOGIN PAGE **/
 
+.login-content{
+    background-image: url(/images/login.jpg);
+        background-size: 140%;
+        background-position: center;
+        background-repeat: no-repeat; 
+        text-align: center;
+        min-height: 600px;   
+        color: white;  
 
+}
+
+/** COUNTRIES PAGE **/
+
+.countries-content{
+    background-image: url(/images/countries.jpg);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat; 
+        text-align: center;
+        min-height: 600px;   
+        
+
+}
+
+.countries-header {
+    color:white;
+    background-color: #6c757d6e;
+}
+
+/** ARTICLES PAGE **/
+
+.articles-content{
+    background-image: url(/images/articles.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat; 
+    text-align: center;
+    min-height: 600px;   
+
+}
+
+.articles-header {
+    color:white;
+    background-color: #6c757d6e;
+
+}
+
+.main_articles_container {
+    background-color: #4d545a6e;
+
+}
+.article_container a{
+    text-decoration: none;
+    color: white;
+    
+}
