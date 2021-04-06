@@ -217,3 +217,20 @@ make the background-image size bigger.*/
     color: white;
     
 }
+
+/** ADD A NEW ARTICLE PAGE **/
+
+.newArticle-title {
+    color:white;
+    background-color: #6c757d6e;
+
+}
+.new_article_container {
+    background-image: url(/images/new-article.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;   
+    text-align: center;
+    min-height: 600px;   
+    color: white;  
+}
