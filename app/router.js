@@ -34,5 +34,8 @@ router.post('/login', adminController.loginPost);
 // Afficher la page pour ajouter un article 
 router.get('/article/add', adminController.showAddArticleForm);
 
+// Traiter les données pour ajouter un article
+router.post('/article/add', adminController.addArticle);
+
 
 module.exports = router; 

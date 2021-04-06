@@ -1,4 +1,4 @@
-const { response } = require('express');
+const { response, request } = require('express');
 const { Article, Country } = require('../models');
 
 module.exports = {
@@ -45,5 +45,18 @@ module.exports = {
     },
 
     // Méthode qui récupère les données du formulaire envoyées en POST 
+    addArticle: (request, response) => {
+        let sampleFile; 
+        let uploadPath; 
+
+        if(!request.files || Object.keys(request.files).length === 0){
+            return response.status(400).send('No files were uploaded');
+        }
+
+        sampleFile = request.files.file;
+        console.log(sampleFile);
+
+
+    }
 };
 

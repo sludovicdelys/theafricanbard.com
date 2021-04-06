@@ -4,11 +4,15 @@ require('dotenv').config();
 const express = require('express');
 const router = require('./app/router');
 const session = require('express-session');
+const fileUpload = require('express-fileupload');
 
 const app = express();
 
 // En cas d'erreur avec notre variable d'environnment, on utilise la valeur par défaut
 const PORT = process.env.PORT || 3000;
+
+// Options par défault de fileUpload
+app.use(fileUpload());
 
 // Configuration EJS comme moteur de template
 app.set('view engine', 'ejs');
