@@ -50,3 +50,29 @@ _01 Avril 2021_
     ![Erreur 500 Sequelize](images/erreur500_sequelize.png)
     
 
+### Ajouter récupérer en POST  dans mon dossier 'images'
+
+_07 Avril 2021_
+
+- Dans mon controller ```adminController``` j'ai configurer une méthode ```addArticle``` afin de pouvoir récupérer les données envoyer en POST de mon formulaie qui se trouve dans mon fichier ```addArticle.ejs```. 
+
+- J'ai télécharger un npm package qui s'appelle ```express-fileupload``` et j'ai utiliser la fonction ```mv()``` pour: 
+    - récupérer l'image qui se trouve dans ```request.files```
+    - définir un chemin dans ```fileUpload``` vers le dossier souhaité 
+    - enregistrer l'image dans le bon dossier ```'/public/images/mon-image.png/```
+
+[GitHub express-fileupload](https://github.com/richardgirges/express-fileupload/tree/master/example#basic-file-upload)
+
+- ERREUR: 
+![Erreur](images/erreur-fileupload1.png)
+
+```(node:87604) UnhandledPromiseRejectionWarning: Error: ENOENT: no such file or directory, open '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/app/controllers/public/images/admin.jpg'```
+
+Je n'avais pas configurer le bon chemin vers mon dossier 
+
+- SOLUTION: 
+
+``` uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name```
+
+
+
