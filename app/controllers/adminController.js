@@ -31,7 +31,7 @@ module.exports = {
         try {
             if (!request.session.isUserLogged) {
                 response.redirect('/');
-            } 
+            }
 
             const countries = await Country.findAll();
             response.render('addArticle', { countries });
@@ -45,18 +45,47 @@ module.exports = {
     },
 
     // Méthode qui récupère les données du formulaire envoyées en POST 
-    addArticle: (request, response) => {
-        let sampleFile; 
-        let uploadPath; 
+    addArticle: async (request, response) => {
 
-        if(!request.files || Object.keys(request.files).length === 0){
-            return response.status(400).send('No files were uploaded');
+        try {
+            let sampleFile;
+            let uploadPath;
+
+            if (!request.files || Object.keys(request.files).length === 0) {
+                return response.status(400).send('No files were uploaded');
+            }
+
+            // name of the input is sampleFile
+
+            console.log(`What is inside ? ${request.files}`);
+            console.log(request.files);
+
+
+            sampleFile = request.files.sampleFile;
+            uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name;
+            console.log(sampleFile.name);
+
+
+
+            console.log(`sampleFile: ${sampleFile}`);
+            console.log(`Upload path: ${uploadPath}`);
+
+
+            // Use mv() to place file on the server
+            sampleFile.mv(uploadPath, function(error) {
+                if (error) {
+                      return response.status(500).send(error); 
+                }
+                response.send('File uploaded');
+            });
+           
+
+        } catch (error) {
+
+            console.error(error);
+            response.status(500).json({ error: error.message });
+
         }
-
-        sampleFile = request.files.file;
-        console.log(sampleFile);
-
-
     }
 };
 

@@ -12,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Options par défault de fileUpload
+
 app.use(fileUpload());
 
 // Configuration EJS comme moteur de template
