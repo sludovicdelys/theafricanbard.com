@@ -1,5 +1,6 @@
 const { response, request } = require('express');
 const { Article, Country } = require('../models');
+const { Op } = require("sequelize");
 
 module.exports = {
     // Méthode qui affiche la page de connexion
@@ -54,31 +55,58 @@ module.exports = {
             if (!request.files || Object.keys(request.files).length === 0) {
                 return response.status(400).send('No files were uploaded');
             }
+            // console.log(request.files);
 
             // name of the input is sampleFile
-
-            console.log(`What is inside ? ${request.files}`);
-            console.log(request.files);
-
-
             sampleFile = request.files.sampleFile;
             uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name;
-            console.log(sampleFile.name);
-
-
-
-            console.log(`sampleFile: ${sampleFile}`);
-            console.log(`Upload path: ${uploadPath}`);
-
 
             // Use mv() to place file on the server
-            sampleFile.mv(uploadPath, function(error) {
-                if (error) {
-                      return response.status(500).send(error); 
+            sampleFile.mv(uploadPath);
+
+
+            // For an article with multiple countries we need to convert an array string values to integer values 
+            const countryIdString = request.body.country;
+            // console.log(countryIdString);
+            const countryId = countryIdString.map(element => parseInt(element, 10));
+
+            console.log(countryId);
+
+
+            // Stocker les informations du formulaire dans un objet qui représente le nouvel article à ajouter. 
+            const infosArticle = {
+                title: request.body.title,
+                image_path: '/images/' + sampleFile.name,
+                text: request.body.textarea,
+
+                countries: countryId
+            };
+
+
+            console.log(infosArticle);
+
+            // Trouve tout les pays qui correspondent graçe à leurs id 
+            const countries = await Country.findAll({
+                where: {
+                    id: {[Op.in]: infosArticle.countries }
                 }
-                response.send('File uploaded');
             });
-           
+
+            console.log(countries);
+
+            //Créer et ajouter un nouvel article à la base de données avec les informations de infosArticle + countries  
+            const newArticle = await Article.create({
+                title: infosArticle.title,
+                image_path: infosArticle.image_path,
+                text: infosArticle.text,
+                countries: countries
+            }, {
+                include: ['countries']
+            });
+
+
+            response.send(newArticle);
+
 
         } catch (error) {
 
