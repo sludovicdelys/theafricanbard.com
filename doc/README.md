@@ -15,9 +15,10 @@
 
 - Bonus: un utilisateur peut acheter une photo dans la boutique en ligne
 
-## Notes 
 
-### Des images dans la BDD ?
+# Notes/Debugging Log
+
+## Des images dans la BDD ?
 
 _28 Mars 2021_
 
@@ -29,15 +30,19 @@ Il faudrait plutôt stocker les images dans un dossier et les chemins vers ces i
 
 - Les base de données d'aujourd'hui sont tout à fait capable de stocker de grandes images, mais je choisis de stocker les images enregistrées par l'administrateur dans un dossier images, qui sera ensuite ajouter a la base de données. 
 
-### Il y a beaucoup de textes dans ma requête SQL
+-------
+
+## Il y a beaucoup de textes dans ma requête SQL
 
 _29 Mars 2021_
 
 - J'aimerais pouvoir importer dans ma table un fichier qui contient le texte de mon blog. Écrire tout le texte dans ma requête SQL rends mon code illisible, ce qui n'est pas optimale. 
 
-- Rien à faire, le fichier SQL n'est pas censé être 'beau'. Il faut que j'écrive tout les paragraphes de mes articles dans ma transaction SQL. 
+- Rien à faire, le fichier SQL n'est pas censé être 'beau'. Il faut que j'écrive tout les paragraphes de mes articles dans ma transaction SQL.
 
-### Pouvoir récupérer la colonne country_id dans ma requêtes des articles
+-------
+
+## Pouvoir récupérer la colonne country_id dans ma requêtes des articles
 
 _01 Avril 2021_
 
@@ -49,12 +54,13 @@ _01 Avril 2021_
     - Dans mon fichier ```country.js ``` je configure mon timestamps, createdAt et updatedAt a ```false``` pour ne pas que sequelize ajoute directement ces colonnes et éviter les erreurs avec un status 500 dans ma requête.  
     ![Erreur 500 Sequelize](images/erreur500_sequelize.png)
     
+-------
 
-### Ajouter récupérer en POST  dans mon dossier 'images'
+## Récupérer un fichier en POST et l'ajouter dans mon dossier 'images'
 
 _07 Avril 2021_
 
-- Dans mon controller ```adminController``` j'ai configurer une méthode ```addArticle``` afin de pouvoir récupérer les données envoyer en POST de mon formulaie qui se trouve dans mon fichier ```addArticle.ejs```. 
+- Dans mon controller ```adminController``` j'ai configurer une méthode ```addArticle``` afin de pouvoir récupérer les données envoyer en POST de mon formulaire qui se trouve dans mon fichier ```addArticle.ejs```. 
 
 - J'ai télécharger un npm package qui s'appelle ```express-fileupload``` et j'ai utiliser la fonction ```mv()``` pour: 
     - récupérer l'image qui se trouve dans ```request.files```
@@ -68,11 +74,46 @@ _07 Avril 2021_
 
 ```(node:87604) UnhandledPromiseRejectionWarning: Error: ENOENT: no such file or directory, open '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/app/controllers/public/images/admin.jpg'```
 
-Je n'avais pas configurer le bon chemin vers mon dossier 
+- Je n'avais pas configurer le bon chemin vers mon dossier 
 
 - SOLUTION: 
 
-``` uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name```
+```
+uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name;
+```
+
+-------
+
+## Un operateur Sequelize qui permet une requête SQL du type IN [1, 2]
+
+_08 Avril 2021_
+
+- Dans mon formulaire je récupère le titre, l'image, le text, et les id des pays associés à mon article. 
+- Dans mon test, j'aimerais ajouter un article associé à plusieurs pays et stocker cette information dans ma BDD avec l'instance ```Article.create()```.
+- Avec ```findByPk``` je peux récupérer un pays correspondant à un seul id
+- J'aimerais récupérer plusieurs pays en faisant référance à plusieurs ids, avec une requête de ce type: 
+```
+SELECT * FROM country WHERE id IN (3,4);
+```
+
+- SOLUTION : [Sequelize Operators](https://sequelize.org/master/manual/model-querying-basics.html#operators)
+
+```
+ // Trouve tout les pays qui correspondent graçe à leurs id 
+
+const countries = await Country.findAll({
+where: {
+id: { [Op.in]: infosArticle.countries }
+}
+});
+```
+-------
+
+## Créer un nouvel article, puis l'associer à des pays existants dans la table 'country'
+
+_11 Avril 2021_
+
+```-ERROR: ERROR: duplicate key value violates unique constraint "country_pkey"```
 
 
 
