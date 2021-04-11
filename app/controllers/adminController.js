@@ -45,33 +45,33 @@ module.exports = {
         }
     },
 
-    // Méthode qui récupère les données du formulaire envoyées en POST 
+    // Méthode qui ajoute un nouvel article 
     addArticle: async (request, response) => {
 
         try {
+            /* Etape 1: Récupérer l'image enregistrée dans notre formulaire, pour ensuite l'ajouter à notre BDD et à notre dossier images*/
+
             let sampleFile;
             let uploadPath;
 
             if (!request.files || Object.keys(request.files).length === 0) {
                 return response.status(400).send('No files were uploaded');
             }
-            // console.log(request.files);
 
-            // name of the input is sampleFile
+            // Stocker le fichier image dans une variable sampleFile
             sampleFile = request.files.sampleFile;
+            // Stocker le chemin pour accéder à cette image dans une variable uploadPath
             uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name;
 
-            // Use mv() to place file on the server
+            // Utiliser mv() pour placer le fichier dans notre dossier images 
             sampleFile.mv(uploadPath);
 
+            /* Etape 2: On récupère les pays sélectionné dans le formulaire */
 
-            // For an article with multiple countries we need to convert an array string values to integer values 
+            // Convertir les valeurs de type chaîne en valeurs de type numérique
+            // Conversion compatible avec un tableau de valeurs correspondant à un article avec plusieurs pays
             const countryIdString = request.body.country;
-            // console.log(countryIdString);
             const countryId = countryIdString.map(element => parseInt(element, 10));
-
-            console.log(countryId);
-
 
             // Stocker les informations du formulaire dans un objet qui représente le nouvel article à ajouter. 
             const infosArticle = {
@@ -83,29 +83,27 @@ module.exports = {
             };
 
 
-            console.log(infosArticle);
-
             // Trouve tout les pays qui correspondent graçe à leurs id 
             const countries = await Country.findAll({
                 where: {
-                    id: {[Op.in]: infosArticle.countries }
+                    id: { [Op.in]: infosArticle.countries }
                 }
             });
 
-            console.log(countries);
+            /* Etape 3: Création d'un nouvel article */
 
-            //Créer et ajouter un nouvel article à la base de données avec les informations de infosArticle + countries  
+            // Créer et ajouter un nouvel article à la base de données avec les informations de infosArticle + countries  
             const newArticle = await Article.create({
                 title: infosArticle.title,
                 image_path: infosArticle.image_path,
-                text: infosArticle.text,
-                countries: countries
-            }, {
-                include: ['countries']
+                text: infosArticle.text
             });
 
+            // Associer notre nouvel article aux pays sélectionnés dans notre formulaire
+            await newArticle.addCountries(countries, {as: 'countries'});
 
-            response.send(newArticle);
+            // Rediriger vers la page avec plusieurs articles
+            response.redirect('articles');
 
 
         } catch (error) {
