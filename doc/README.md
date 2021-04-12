@@ -113,7 +113,38 @@ id: { [Op.in]: infosArticle.countries }
 
 _11 Avril 2021_
 
-```-ERROR: ERROR: duplicate key value violates unique constraint "country_pkey"```
+- Après avoir récupérer un tableau de tout les pays que je souhaitais associer à mon article, j'ai utiliser la méthode Sequelize ```.create()``` pour pouvoir ajouter un nouvel article et en même temps associer ce nouvel article avec des pays. 
+
+- Je me suis servie de la documentation de Sequelize qui concernent la création d'instance avec des association [Creating with Associations - BelongsToMany association](https://sequelize.org/master/manual/creating-with-associations.html). J'ai reçu une erreur de la part de mon programme. 
+
+```
+-ERROR: ERROR: duplicate key value violates unique constraint "country_pkey"
+```
+
+- Il se trouve que dans l'example de la documentation de Sequelize, il est indiqué que l'on peut créer une instance avec des associations en une seule étape uniquement si tout les éléments sont créer pour la première fois. Avec l'erreur mon programme m'indique que il ne peut pas ajouter un pays qui existe déjà. 
+
+- SOLUTION: Étant donné que une association est définie entre mes deux modèles, les instances de ces modèles bénéficient de méthodes spéciales pour intéragir avec leurs homologues associés. [Special methods/mixins added to instances](https://sequelize.org/master/manual/assocs.html#special-methods-mixins-added-to-instances)
+
+```
+// Trouve tout les pays qui correspondent graçe à leurs id 
+    const countries = await Country.findAll({
+        where: {
+            id: { [Op.in]: infosArticle.countries }
+            }
+        });
+
+/* Etape 3: Création d'un nouvel article */
+
+// Créer et ajouter un nouvel article à la base de données avec les informations de infosArticle + countries  
+    const newArticle = await Article.create({
+        title: infosArticle.title,
+        image_path: infosArticle.image_path,
+        text: infosArticle.text
+        });
+
+// Associer notre nouvel article aux pays sélectionnés dans notre formulaire
+    await newArticle.addCountries(countries, {as: 'countries'});
+```
 
 
 
