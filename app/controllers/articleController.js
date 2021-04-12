@@ -9,6 +9,8 @@ module.exports = {
             const articles = await Article.findAll({
                 include: "countries"
             });
+
+            // On vérifie si l'admin est connecté, afin de choisir qu'elle view on envoie à l'utilisateur 
             response.render('articles', {articles});
         } catch (error) {
             console.error(error);

@@ -13,7 +13,7 @@
 - un article possède une description 
 - un article possède une destination assignée 
 
-- Bonus: un utilisateur peut acheter une photo dans la boutique en ligne
+- Bonus: Plusieurs 'auteurs' peuvent se connecter à leurs profil et ajouter ou supprimer un article 
 
 
 # Notes/Debugging Log
