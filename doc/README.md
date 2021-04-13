@@ -52,7 +52,8 @@ _01 Avril 2021_
     - ```timestamps:false``` afin de ne pas avoir la création automatique de ```createdAt``` et ```updatedAt``` pour tout mes models
     - Dans mon fichier ```article.js``` je configure mon  ```timestamps: true```, ```createdAt: 'created_at'```  et ```updatedAt: 'updated_at' ``` pour pouvoir avoir ces colonnes dans ma table 'article'. 
     - Dans mon fichier ```country.js ``` je configure mon timestamps, createdAt et updatedAt a ```false``` pour ne pas que sequelize ajoute directement ces colonnes et éviter les erreurs avec un status 500 dans ma requête.  
-    ![Erreur 500 Sequelize](images/erreur500_sequelize.png?raw=true)
+    <img alt="Erreur 500 Sequelize" width="650px" src="./images/erreur500_sequelize.png" />
+
     
 -------
 
@@ -70,7 +71,8 @@ _07 Avril 2021_
 [GitHub express-fileupload](https://github.com/richardgirges/express-fileupload/tree/master/example#basic-file-upload)
 
 - ERREUR: 
-![Erreur](images/erreur-fileupload1.png?raw=true)
+<img alt="Erreur" width="650px" src="./images/erreur-fileupload1.png" />
+
 
 ```(node:87604) UnhandledPromiseRejectionWarning: Error: ENOENT: no such file or directory, open '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/app/controllers/public/images/admin.jpg'```
 
