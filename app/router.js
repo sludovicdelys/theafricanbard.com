@@ -14,6 +14,7 @@ router.get('/', mainController.showHomePage);
 
 // Récupérer tous les articles
 router.get('/articles', articleController.findAll);
+router.get()
 
 // Récupérer un article 
 router.get('/articles/:id', articleController.findOne);
