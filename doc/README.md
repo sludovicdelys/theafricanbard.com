@@ -52,7 +52,7 @@ _01 Avril 2021_
     - ```timestamps:false``` afin de ne pas avoir la création automatique de ```createdAt``` et ```updatedAt``` pour tout mes models
     - Dans mon fichier ```article.js``` je configure mon  ```timestamps: true```, ```createdAt: 'created_at'```  et ```updatedAt: 'updated_at' ``` pour pouvoir avoir ces colonnes dans ma table 'article'. 
     - Dans mon fichier ```country.js ``` je configure mon timestamps, createdAt et updatedAt a ```false``` pour ne pas que sequelize ajoute directement ces colonnes et éviter les erreurs avec un status 500 dans ma requête.  
-    ![Erreur 500 Sequelize](public/images/erreur500_sequelize.png)
+    ![Erreur 500 Sequelize](doc/images/erreur500_sequelize.png)
     
 -------
 
