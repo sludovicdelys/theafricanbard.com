@@ -1,0 +1,27 @@
+<%- include('partials/header'); %>
+
+<div class="articles-content-admin">
+    <h2 class="articles-header">Articles</h2>
+
+    <div class="main_articles_container">
+        <% for (const article of articles) { %>
+
+        <div class="article_container">
+            <a href="/articles/<%=article.id%>">
+                <p class="article_title"><%= article.title %>
+                    <strong class="article_date">Published on: <%= article.created_at.toDateString() %></strong>
+                </p>
+            </a>
+
+            <a href="/articles/delete/<%=article.id%>">
+                <i class="fas fa-trash"></i>
+            </a>
+        </div>
+
+        <% } %>
+
+    </div>
+</div>
+
+
+<%- include('partials/footer'); %>

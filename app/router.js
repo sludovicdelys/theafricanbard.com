@@ -14,10 +14,12 @@ router.get('/', mainController.showHomePage);
 
 // Récupérer tous les articles
 router.get('/articles', articleController.findAll);
-router.get()
 
 // Récupérer un article 
 router.get('/articles/:id', articleController.findOne);
+
+// Supprimer un article
+router.get('/articles/delete/:id', adminController.delete);
 
 
 // Récupérer tout les pays sans les articles
@@ -32,11 +34,19 @@ router.get('/login',  adminController.showLoginForm);
 // On traite les données du formulaire de connexion
 router.post('/login', adminController.loginPost);
 
+// Afficher la page de l'administrateur
+router.get('/admin', adminController.showAdmin);
+
 // Afficher la page pour ajouter un article 
-router.get('/article/add', adminController.showAddArticleForm);
+router.get('/admin/add', adminController.showAddArticleForm);
 
 // Traiter les données pour ajouter un article
-router.post('/article/add', adminController.addArticle);
+router.post('/admin/add', adminController.add);
+
+// Afficher la page pour supprimer un article 
+router.get('/admin/delete', adminController.showDelete);
+
+
 
 
 module.exports = router; 

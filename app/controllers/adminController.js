@@ -2,11 +2,14 @@ const { response, request } = require('express');
 const { Article, Country } = require('../models');
 const { Op } = require("sequelize");
 
+
 module.exports = {
     // Méthode qui affiche la page de connexion
     showLoginForm: (request, response) => {
         response.render('login');
     },
+
+
 
     // Méthode qui vérifie que les bonnes informations de connexion sont saisies
     loginPost: (request, response) => {
@@ -17,12 +20,17 @@ module.exports = {
 
         if (login === 'admin' && password === 'anafricanquestinvenezuela2019*') {
             request.session.isUserLogged = true;
-            response.redirect('http://localhost:3000/article/add');
+            response.redirect('admin');
         } else {
             response.send('Oops we got a problem! Try again!');
         }
 
 
+    },
+
+    // Méthode qui affiche la page de l'administrateur
+    showAdmin: (request, response) => {
+        response.render('admin');
     },
 
     // Méthode qui affiche la page pour ajouter un nouvel article 
@@ -35,7 +43,7 @@ module.exports = {
             }
 
             const countries = await Country.findAll();
-            response.render('addArticle', { countries });
+            response.render('add', { countries });
 
         } catch (error) {
             console.error(error);
@@ -46,7 +54,7 @@ module.exports = {
     },
 
     // Méthode qui ajoute un nouvel article 
-    addArticle: async (request, response) => {
+    add: async (request, response) => {
 
         try {
             /* Etape 1: Récupérer l'image enregistrée dans notre formulaire, pour ensuite l'ajouter à notre BDD et à notre dossier images*/
@@ -100,7 +108,7 @@ module.exports = {
             });
 
             // Associer notre nouvel article aux pays sélectionnés dans notre formulaire
-            await newArticle.addCountries(countries, {as: 'countries'});
+            await newArticle.addCountries(countries, { as: 'countries' });
 
             // Rediriger vers la page avec plusieurs articles
             response.redirect('articles');
@@ -112,6 +120,45 @@ module.exports = {
             response.status(500).json({ error: error.message });
 
         }
+    },
+
+    // Méthode pour afficher la page d'articles à supprimer 
+    showDelete: async (request, response) => {
+        try {
+            if (!request.session.isUserLogged) {
+                response.redirect('/');
+            }
+            const articles = await Article.findAll({
+                include: "countries"
+            });
+            response.render('delete', { articles });
+        } catch (error) {
+            console.error(error);
+            response.status(500).json({ error: error.message });
+        }
+
+    },
+
+    // Méthode qui supprime un article 
+    delete: async (request, response, next) => {
+
+        const id = parseInt(request.params.id);
+
+        try {
+
+            const deletedArticle = await Article.destroy({where: {id}});
+
+            if(deletedArticle >= 1) {
+                response.redirect('delete');
+            } else {
+                next();
+            }
+
+        } catch (error) {
+            console.error(error);
+            response.status(500).json({ error: error.message });
+        }
+
     }
 };
 
