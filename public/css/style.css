@@ -1,43 +1,55 @@
 
-body {
+html, body {
+    height: 100%; 
     font-family: 'Vollkorn', serif;
 }
 
 /** HOMEPAGE **/
 
+
 /*Header box*/
     #header{
-        background-color: white; 
+        background-color: white;
         text-align: center; 
         display: flex;
-        align-items: flex-end;
-        justify-content:space-between;
-
-            
+        align-items: center;
+        justify-content:space-between; 
+        padding: 5px;
+        
     }
+    
 
-    #header a {
-        color: black
-    }
-
-/*Header title*/
-    .header_title {
-        font-size: 2em;
-        color: rgb(12, 24, 15); 
-        align-self: flex-end;
+    #header .toggle {
+        position:relative; 
+        width: 40%;
+        height: 40%; 
        
     }
 
+/*Website title*/
+.website-title {
+    font-family: 'Megrim', cursive;
+}
+
+.website-title a{color:black}
+
+#header a, a > span {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+#header a:before, a:after,  a > span:before,  a > span:after {
+    content: '';
+    position: absolute;
+    transition: transform .5s ease;
+}
+
+
 
 /*Navigation bar*/
-    .nav_index {
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        background-color:rgba(0, 110, 82, 0.89); 
-        padding: 20px; 
-        
-    }
+
     
 /*Navigation links*/
     .nav_index a {
@@ -45,10 +57,8 @@ body {
         font-family: 'Vollkorn', serif;  
     }
     .nav_index_links {
-        color:white;
-       
+        color:black;
         padding: 10px 12px;
-        font-family:'Courier New', Courier, monospace;
         font-size: 100%;
         display: block;  
         text-align: center; 
@@ -58,16 +68,16 @@ body {
 /* On screens that are 510px wide or less, 
 make the menu links stack on top of each other 
 instead of next to each other*/
-@media screen and (max-width: 510px) {
+/* @media screen and (max-width: 510px) {
     .nav_index_links {
         float: none; 
         width: 100%; 
     }
-}
+} */
 
 /* On screens that are 1317px wide or more, 
 make the menu links floating center instead of left.*/
-@media screen and (min-width: 1317px) {
+/* @media screen and (min-width: 1317px) {
     .nav_index_links {
         display: flex;
             flex-direction: row;
@@ -76,87 +86,75 @@ make the menu links floating center instead of left.*/
     .nav_index_links {
         float: none;
         /* flex-direction: row;  */
-        }
-    }
+        /* }
+    }  */
 
-/* Make the background white and text black 
-when mouse hovers over navigation links */     
-    .nav_index_links:hover {
-        padding: 10px; 
-        background-color: white; 
-        color: black; 
-    }
 
-/* Make the background white when mouse over
-main links*/
-    .nav_index_links {
-        text-decoration:underline; 
+/* Quote box + Image   */
+    .main_index {
+        background-image: url('/images/index.jpg');
+        width:100%;
+        height: 100%; 
+        background-size: 100%; 
+        background-repeat: no-repeat;
         
     }
 
-/*Quote box + Image*/  
-    .main_index { 
-        background-image: url(/images/index.jpg);
-        background-size: 140%;
-        background-position: center;
-        background-repeat: no-repeat; 
-        text-align: center;
-        min-height: 600px;      
+    .vignette {
+        background-image: url(/images/explore.png);
+        background-color: #ffffff73;
+        border-radius: 300px;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 250px;
+        background-size: cover;
+        position: absolute;
+        left: 10%;
+        top: 30%;
+        font-family: 'Julee', cursive;
     }
 
 
-    /*Quote title*/
-    .main_quote {
-        font-size: 25px;
-        color: white; 
-        padding-top: 200px; 
-        font-family: fantasy; 
-    }
 
-    /*Quote author*/ 
-    .main_quote--author {
-        color: white; 
-        font-family: fantasy;
-        font-style: italic;
-        margin-bottom: 200px;              
-    
-    }
     
 
-/*MEDIA QUERIES FOR BACKGROUNG IMAGE*/
+/* MEDIA QUERIES FOR BACKGROUNG IMAGE
 
 /* On screens that are 1342px or less, 
 make the backround-image size bigger.*/
-@media screen and (max-width: 1165px) {
+/* @media screen and (max-width: 1165px) {
     .main_index {
         background-size: 240%; 
     }
-}
+} */
 /* On screens that are 800px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 853px) {
+/* @media screen and (max-width: 853px) {
     .main_index {
         background-size: 280%; 
     }
-}
+} */
 /* On screens that are 500px or less, 
 make the background-image size bigger.*/
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
     .main_index {
         background-size: 300%; 
     }
-}
+} */
 
                                                 /*FOOTER*/
 
 
-/*home-contact-about buttons*/
+/*Footer*/
     .footer_index {
         background-color: white; 
         text-align: center; 
-        padding: 20px; 
+        padding: 5px; 
     }
 
+    .footer_index h3 {
+        font-family: 'Vollkorn', serif;  
+    }
 
 
 /** LOGIN PAGE **/
@@ -175,13 +173,12 @@ make the background-image size bigger.*/
 /** COUNTRIES PAGE **/
 
 .countries-content{
-    background-image: url(/images/countries.jpg);
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat; 
-        text-align: center;
-        min-height: 600px;   
-        
+        background-image: url(/images/countries.jpg);
+        width:100%;
+        height: 100%; 
+        background-size: 100%; 
+        background-repeat: no-repeat;
+        text-align: center;   
 
 }
 
@@ -234,3 +231,85 @@ make the background-image size bigger.*/
     min-height: 600px;   
     color: white;  
 }
+
+
+/*Link Hover Effects by Jegede Olamide*/
+/*https://github.com/jegedeolamide99*/
+
+.hover-6 {
+    display: inline-flex;
+    overflow: hidden;
+  }
+  .hover-6:before, .hover-6:after {
+    right: 0;
+    bottom: 0;
+    background: #492059;
+    transition: transform .3s ease;
+  }
+  .hover-6:before {
+    width: 100%;
+    height: 2px;
+    transform: translateX(-100%);
+    transition-delay: .9s;
+  }
+  .hover-6:after {
+    width: 2px;
+    height: 100%;
+    transform: translateY(100%);
+    transition-delay: .6s;
+  }
+  .hover-6 > span {
+    display: flex;
+    padding: 10px;
+  }
+  .hover-6 > span:before, .hover-6 > span:after {
+    left: 0;
+    top: 0;
+    background: #492059;
+    transition: transform .3s ease;
+  }
+  .hover-6 > span:before {
+    width: 100%;
+    height: 2px;
+    transform: translateX(100%);
+    transition-delay: .3s;
+  }
+  .hover-6 > span:after {
+    width: 2px;
+    height: 100%;
+    transform: translateY(-100%);
+    transition-delay: 0s;
+  }
+  .hover-6:hover:before, .hover-6:hover:after, .hover-6:hover > span:before, .hover-6:hover > span:after {
+    transform: translate(0, 0);
+  }
+  .hover-6:hover:before {
+    transition-delay: 0s;
+  }
+  .hover-6:hover:after {
+    transition-delay: .3s;
+  }
+  .hover-6:hover > span:before {
+    transition-delay: .6s;
+  }
+  .hover-6:hover > span:after {
+    transition-delay: .9s;
+  }
+/*hover-3*/
+  .hover-3 {
+    display: inline-flex;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+  }
+  .hover-3:before {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #492059;
+    transform: translateX(-100%);
+  }
+  .hover-3:hover:before {
+    transform: translateX(0);
+  }
