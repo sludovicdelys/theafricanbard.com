@@ -102,16 +102,17 @@ make the menu links floating center instead of left.*/
 
     .vignette {
         background-image: url(/images/explore.png);
-        background-color: #ffffff73;
+        background-color: #47423e1f;
         border-radius: 300px;
         background-repeat: no-repeat;
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         background-size: cover;
         position: absolute;
-        left: 10%;
+        left: 60%;
         top: 30%;
-        font-family: 'Julee', cursive;
+        border: 2px solid #ddc38a42;
+        
     }
 
 
@@ -173,45 +174,91 @@ make the background-image size bigger.*/
 /** COUNTRIES PAGE **/
 
 .countries-content{
-        background-image: url(/images/countries.jpg);
-        width:100%;
-        height: 100%; 
-        background-size: 100%; 
-        background-repeat: no-repeat;
-        text-align: center;   
+    background-image: url(/images/countries.jpg);
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    text-align: center; 
+    display:flex;  
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+}
+
+.flag-countries {
+    background-image: url(/images/flag.png);
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    margin-top: 10px; 
+    background-size: cover;
+}
+
+.flag-countries a {
+    color: black;
+    line-height: 70px;
+    text-decoration: none; 
+    font-family: 'Vollkorn', serif; 
+    font-size: 1em; 
 
 }
 
-.countries-header {
-    color:white;
-    background-color: #6c757d6e;
+.flag-countries a:hover {
+    color: #416b6a;
+}
+
+/** FILTERED BY COUNTRY**/
+.header-country {
+    background-image: url(/images/globe.png);
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+
+    margin-top: 10px; 
+    background-size: cover;align-content: center;
+    justify-content: center;
+}
+
+.header-country h2 {
+    font-family: 'Dancing Script', cursive;
 }
 
 /** ARTICLES PAGE **/
 
 .articles-content{
     background-image: url(/images/articles.jpg);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat; 
-    text-align: center;
-    min-height: 600px;   
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    align-items: center;
+    display:flex;  
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    
+}
+
+.article_container {
+    background-color: #ededeb3b;
+    margin-top: 10px; 
+    padding: 30px; 
+    align-items: center;
+}
+
+.article_container img {
+    width:300px;
+    height:200px;
+    
 
 }
 
-.articles-header {
-    color:white;
-    background-color: #6c757d6e;
-
+.article_container span {
+    color: rgb(238, 238, 238)
 }
 
-.main_articles_container {
-    background-color: #4d545a6e;
-
-}
 .article_container a{
-    text-decoration: none;
-    color: white;
+    color: black;
     
 }
 

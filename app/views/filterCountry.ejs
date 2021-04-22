@@ -1,6 +1,9 @@
 <%- include('partials/header'); %>
 
-<h2 class="header_country"><%=country.name%></h2>
+<div class="header-country">
+    <h2><%=country.name%></h2>
+</div>
+
 
 <div class="main_articles_container">
     <% for (const article of country.articles) { %>

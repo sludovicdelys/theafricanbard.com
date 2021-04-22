@@ -1,13 +1,15 @@
 <%- include('partials/header'); %>
 
 <div class="countries-content">
-    <h2 class="countries-header">Countries</h2>
-
 
     <% for (const country of countries) { %>
 
-    <button class="button_country"
-        onclick="window.location.href='/countries/<%=country.id%>/articles';"><%= country.name %></button>
+    <div class="flag-countries">
+        <a href="/countries/<%=country.id%>/articles">
+        <%= country.name %>
+        </a>
+    </div>
+
 
     <% } %>
 </div>
