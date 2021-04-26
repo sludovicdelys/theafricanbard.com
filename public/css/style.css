@@ -4,7 +4,7 @@ html, body {
     font-family: 'Vollkorn', serif;
 }
 
-/** HOMEPAGE **/
+                        /** HOMEPAGE **/
 
 
 /*Header box*/
@@ -17,7 +17,6 @@ html, body {
         padding: 5px;
         
     }
-    
 
     #header .toggle {
         position:relative; 
@@ -27,6 +26,7 @@ html, body {
     }
 
 /*Website title*/
+
 .website-title {
     font-family: 'Megrim', cursive;
 }
@@ -46,11 +46,7 @@ html, body {
     transition: transform .5s ease;
 }
 
-
-
-/*Navigation bar*/
-
-    
+  
 /*Navigation links*/
     .nav_index a {
         text-decoration: none; 
@@ -64,31 +60,6 @@ html, body {
         text-align: center; 
         float:left;  
 }
-
-/* On screens that are 510px wide or less, 
-make the menu links stack on top of each other 
-instead of next to each other*/
-/* @media screen and (max-width: 510px) {
-    .nav_index_links {
-        float: none; 
-        width: 100%; 
-    }
-} */
-
-/* On screens that are 1317px wide or more, 
-make the menu links floating center instead of left.*/
-/* @media screen and (min-width: 1317px) {
-    .nav_index_links {
-        display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-    .nav_index_links {
-        float: none;
-        /* flex-direction: row;  */
-        /* }
-    }  */
-
 
 /* Quote box + Image   */
     .main_index {
@@ -114,36 +85,9 @@ make the menu links floating center instead of left.*/
         border: 2px solid #ddc38a42;
         
     }
-
-
-
     
 
-/* MEDIA QUERIES FOR BACKGROUNG IMAGE
-
-/* On screens that are 1342px or less, 
-make the backround-image size bigger.*/
-/* @media screen and (max-width: 1165px) {
-    .main_index {
-        background-size: 240%; 
-    }
-} */
-/* On screens that are 800px or less, 
-make the background-image size bigger.*/
-/* @media screen and (max-width: 853px) {
-    .main_index {
-        background-size: 280%; 
-    }
-} */
-/* On screens that are 500px or less, 
-make the background-image size bigger.*/
-/* @media screen and (max-width: 500px) {
-    .main_index {
-        background-size: 300%; 
-    }
-} */
-
-                                                /*FOOTER*/
+/*FOOTER*/
 
 
 /*Footer*/
@@ -158,20 +102,7 @@ make the background-image size bigger.*/
     }
 
 
-/** LOGIN PAGE **/
-
-.login-content{
-    background-image: url(/images/login.jpg);
-        background-size: 140%;
-        background-position: center;
-        background-repeat: no-repeat; 
-        text-align: center;
-        min-height: 600px;   
-        color: white;  
-
-}
-
-/** COUNTRIES PAGE **/
+                    /** COUNTRIES PAGE **/
 
 .countries-content{
     background-image: url(/images/countries.jpg);
@@ -208,23 +139,53 @@ make the background-image size bigger.*/
     color: #416b6a;
 }
 
-/** FILTERED BY COUNTRY**/
+                /** FILTERED BY COUNTRY **/
+.country-content {
+    background-image: url(/images/country.jpg);
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    align-items: center;
+    display:flex;  
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    align-self:flex-start;
+}
+
 .header-country {
     background-image: url(/images/globe.png);
     background-repeat: no-repeat;
-    width: 120px;
-    height: 120px;
-
-    margin-top: 10px; 
-    background-size: cover;align-content: center;
+    width: 150px;
+    height: 150px;
     justify-content: center;
+    margin-top: 10px; 
+    background-size: cover;
+    text-align: center;
+    
 }
 
-.header-country h2 {
+.header-country p{
+    margin-top: 35px;
+    font-size: 2.5em;
     font-family: 'Dancing Script', cursive;
 }
 
-/** ARTICLES PAGE **/
+
+.country-article-container {
+    width:100%;
+    height: auto;
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    align-items: center;
+    display:flex;  
+    justify-content: space-around;
+    flex-wrap: wrap; 
+
+}
+
+
+                    /** ARTICLES PAGE **/
 
 .articles-content{
     background-image: url(/images/articles.jpg);
@@ -262,22 +223,175 @@ make the background-image size bigger.*/
     
 }
 
-/** ADD A NEW ARTICLE PAGE **/
+                    /** LOGIN PAGE **/
 
-.newArticle-title {
-    color:white;
-    background-color: #6c757d6e;
+.login-content{
+    background-image: url(/images/login.jpg);
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    display:flex;  
+    justify-content: center;
+    flex-wrap: wrap; 
+    align-content: center;
+    clear: both;
+}
+
+.form-content h2 {
+    font-family: 'Megrim', cursive;
 
 }
-.new_article_container {
-    background-image: url(/images/new-article.jpg);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;   
+
+.login-content form {
+    width: 400px;
+    height: 300px;
+    background-color: #384b68c2;
+    color: white;
     text-align: center;
-    min-height: 600px;   
-    color: white;  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+
+.form-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+}
+
+.form-div label{
+    margin-top:10px; 
+    display: block;
+    text-align: left; 
+}
+
+.form-content button{
+    margin: 10px; 
+}
+
+                    /** ADMIN PAGE **/
+
+.admin-container{
+    background-image: url(/images/admin-index.jpg);
+    background-position: center;
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    display:flex;  
+    flex-flow: column; 
+    align-content: center;
+    text-align: center; 
+    color: white; 
+}
+
+.admin-title {
+    font-family: 'Megrim', cursive;
+    background-color: #2c2b2a; 
+    padding: 10px; 
+}
+
+.admin-content {
+    width: 450px;
+    height: 200px;
+    margin-top: 15em;
+    background-color: #755862cc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 50px;
+    align-self: center;
+    padding: 50px;
+}
+
+.admin-links a {
+    padding: 10px;
+    color: white;
+    border: 2px solid black;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 50px;
+
+}
+
+.admin-links a:hover {
+    color: black; 
+    background-color: white; 
+    
+}
+
+
+                    /** ADD A NEW ARTICLE PAGE **/
+
+
+.add-container {
+    background-image: url(/images/new-article.jpg);
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    display:flex;  
+    justify-content: center;
+    flex-wrap: wrap; 
+    align-content: center;
+    clear: both;
+    color: white; 
+}
+
+.admin-title {
+    font-family: 'Megrim', cursive;
+    background-color: #2c2b2a; 
+    padding: 10px; 
+}
+
+.form-label {
+    text-decoration: underline; 
+    display: block;
+}
+
+                    /* DELETE AN ARTICLE */
+
+.delete-container {
+    background-image: url(/images/delete.jpg);
+    width:100%;
+    height: 100%; 
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    display:flex;  
+    flex-flow: column; 
+    align-content: space-around;
+    padding: 50px; 
+    overflow: scroll; 
+}
+
+.article-container-delete {
+    background-color: #c0b196b3; 
+    display: flex;
+    justify-content: space-between;
+    margin: 10px; 
+    padding: 20px; 
+    border-radius: 25px;
+    
+}
+
+.article-info span {
+    color: white; 
+}
+
+.trash-icon a {
+    background-color: black;
+    color: white; 
+}
+
+
+
+
+
 
 
 /*Link Hover Effects by Jegede Olamide*/

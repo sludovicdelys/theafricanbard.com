@@ -1,27 +1,28 @@
 <%- include('partials/header'); %>
 
-<div class="articles-content-admin">
-    <h2 class="articles-header">Articles</h2>
+<main class="delete-container">
+    <% for (const article of articles) { %>
 
-    <div class="main_articles_container">
-        <% for (const article of articles) { %>
+    <section class="article-container-delete">
+        <div class="article-info">
+            <p class="article_title"><%= article.title %>
+                <br>
+                <span class="article_date"><em><%= article.created_at.toDateString() %></em></span>
+            </p>
+        </div>
 
-        <div class="article_container">
-            <a href="#">
-                <p class="article_title"><%= article.title %>
-                    <strong class="article_date">Published on: <%= article.created_at.toDateString() %></strong>
-                </p>
-            </a>
-
+        <div class="trash-icon">
             <a href="/articles/delete/<%=article.id%>">
-                <i class="fas fa-trash"></i>
+                <i class="fas fa-trash fa-2x"></i>
             </a>
         </div>
 
-        <% } %>
+    </section>
 
-    </div>
-</div>
+    <% } %>
+
+</main>
+
 
 
 <%- include('partials/footer'); %>

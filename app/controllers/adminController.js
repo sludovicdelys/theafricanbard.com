@@ -13,12 +13,13 @@ module.exports = {
 
     // Méthode qui vérifie que les bonnes informations de connexion sont saisies
     loginPost: (request, response) => {
+
         console.log(request.body);
 
         const login = request.body.login;
         const password = request.body.password;
 
-        if (login === 'admin' && password === 'anafricanquestinvenezuela2019*') {
+        if (login === 'admin' && password === process.env.PASSWORD) {
             request.session.isUserLogged = true;
             response.redirect('admin');
         } else {

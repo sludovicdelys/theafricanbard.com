@@ -1,23 +1,28 @@
 <%- include('partials/header'); %>
 
-<div class="header-country">
-    <h2><%=country.name%></h2>
-</div>
+<div class="country-content">
 
-
-<div class="main_articles_container">
-    <% for (const article of country.articles) { %>
-
-    <div class="article_container">
-        <a href="/articles/<%=article.id%>">
-            <p class="article_title"><%= article.title %>
-                <strong class="article_date">Published on: <%= article.created_at.toDateString() %></strong>
-            </p>
-        </a>
-
+    <div class="header-country">
+        <p><%=country.name%></p>
     </div>
 
-    <% } %>
+    <div class="country-article-container">
+        <% for (const article of country.articles) { %>
+        <article class="article_container">
+            <img src="<%=article.image_path%>" alt="">
+
+            <p class="article_title"><%= article.title %>
+                <br>
+                <span class="article_date"><em><%= article.created_at.toDateString() %></em></span>
+            </p>
+
+            <a href="/articles/<%=article.id%>">
+                Read More
+            </a>
+        </article>
+
+        <% } %>
+    </div>
 
 </div>
 

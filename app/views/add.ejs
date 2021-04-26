@@ -1,43 +1,45 @@
 <%- include('partials/header'); %>
 
-<div class="new_article_container">
-    <h2 class="newArticle-title">New Article</h2>
-    <form action="/admin/add" method="POST" enctype="multipart/form-data">
+<div class="add-container">
 
-        <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title">
-        </div>
+    <div class="form-container">
+        <form action="/admin/add" method="POST" enctype="multipart/form-data">
 
-        <div class="form-group">
-            <label for="image">Upload Image</label>
-            <input type="file" name="sampleFile" accept="image/*" />
-        </div>
-
-
-        <div class="form-group">
-            <label for="countries">Choose a country:</label>
-
-            <% for (const country of countries) { %>
-
-            <div class="country-option">
-                <input type="checkbox" id="<%=country.name%>" name="country" value="<%=country.id%>">
-                <label for="<%=country.name%>"><%=country.name%></label>
-
+            <div class="form-group">
+                <label class="form-label" for="title">Title:</label>
+                <input type="text" name="title" id="title">
             </div>
-
-
-            <% } %>
-        </div>
-
-
-        <div class="form-group">
-            <label for="textarea"></label>
-            <textarea name="textarea" rows="10" cols="50" placeholder="Write something here."></textarea>
-        </div>
-
-        <input type="submit" class="addArticle-button">
-    </form>
+    
+            <div class="form-group">
+                <label class="form-label" for="image">Upload Image:</label>
+                <input type="file" name="sampleFile" accept="image/*" />
+            </div>
+    
+    
+            <div class="form-group">
+                <label class="form-label" for="countries">Choose a country:</label>
+    
+                <% for (const country of countries) { %>
+    
+                <div class="country-option">
+                    <input type="checkbox" id="<%=country.name%>" name="country" value="<%=country.id%>">
+                    <label for="<%=country.name%>"><%=country.name%></label>
+    
+                </div>
+    
+    
+                <% } %>
+            </div>
+    
+    
+            <div class="form-group">
+                <textarea name="textarea" rows="10" cols="50" placeholder="Write something here."></textarea>
+            </div>
+    
+            <input type="submit" class="addArticle-button">
+        </form>
+    </div>
+    
 
 
 </div>

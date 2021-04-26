@@ -1,15 +1,28 @@
 <%- include('partials/header'); %>
 
-<div class="admin-content">
-    <h2 class="admin-title">Welcome to the webmaster page</h2>
+<div class="admin-container">
 
-    <h3 class="admin-message">What would you like to do ?</h3>
+    <div class="admin-title">
+        <h2>Welcome to the webmaster page</h2>
+    </div>
 
-    <button class="delete-article" onclick="window.location.href='/admin/delete';">Delete an article</button>
+    <div class="admin-content">
+        <div class="admin-message">
+            <h3>What would you like to do ?</h3>
+        </div>
 
-    <button class="add-article" onclick="window.location.href='/admin/add';">Add a new article</button>
 
+        <div class="admin-links">
+            <a href="/admin/delete" class="delete-article">
+                Delete
+            </a>
 
+            <a href="/admin/add" class="add-article">
+                Add
+            </a>
+        </div>
+
+    </div>
 
 </div>
 
