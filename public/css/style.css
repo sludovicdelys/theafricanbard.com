@@ -388,7 +388,43 @@ html, body {
     color: white; 
 }
 
+                /*ONE ARTICLE PAGE*/
+.article-post {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
 
+.article-content {
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+}
+
+.article-header{
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-img img {
+    width: 100%;
+    clear: both;
+    height: auto; 
+    display:block;
+    padding-top:0;
+    padding-left: 17px; 
+    padding-right: 17px; 
+    position:relative;
+    
+
+}
 
 
 

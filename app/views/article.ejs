@@ -1,7 +1,8 @@
 <%- include('partials/header'); %>
 
 
-    <article class="article">
+    <article class="article-post">
+
         <div class="article-content">
             <header class="article-header">
                 <h2 class="article-title"><%=article.title%></h2>
@@ -13,17 +14,16 @@
                     <% } %>
                 </p>
             </header>
-            <figure>
+            <figure class="article-img">
                 <img class="article-image" src="<%=article.image_path%>" alt="image for '<%=article.title%>' article" >
             </figure>
             <main class="article-description">
                 <div class="article-text">
-                    <%=article.text%>
+                    <%=article.text.split('.')%>
                 </div>
-
             </main>
-
         </div>
+
     </article>
 
 
