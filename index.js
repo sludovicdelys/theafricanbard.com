@@ -7,6 +7,7 @@ const session = require('express-session');
 const fileUpload = require('express-fileupload');
 
 const app = express();
+const sanitize = require('./app/middlewares/request-sanitizer');
 
 // En cas d'erreur avec notre variable d'environnment, on utilise la valeur par défaut
 const PORT = process.env.PORT || 3000;
@@ -29,7 +30,11 @@ app.use(session({
 // Récupérer les infos envoyées en POST
 app.use(express.urlencoded({extended: true}));
 
+// Gérer les données statiques 
 app.use(express.static('./public'));
+
+// Protéger des injections
+app.use(sanitize);
 
 app.use(router);
 
