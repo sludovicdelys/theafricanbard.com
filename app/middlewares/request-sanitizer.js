@@ -1,5 +1,3 @@
-const { request, response } = require("express");
-const { noExtendLeft } = require("sequelize/types/lib/operators");
 
 const sanitizer = require('sanitizer');
 
@@ -7,7 +5,7 @@ const sanitizer = require('sanitizer');
 // Protéger des éventuelles injections
 const sanitize = object => {
     for (const property in object) {
-        object[property] = sanitize.escape(object[property]);
+        object[property] = sanitizer.escape(object[property]);
     }
 }
 
@@ -19,3 +17,5 @@ const middleware = (request, response, next) => {
 
     next();
 }
+
+module.exports = middleware; 

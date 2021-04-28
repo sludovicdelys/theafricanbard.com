@@ -109,6 +109,7 @@ html, body {
     width:100%;
     height: 100%; 
     background-size: 100%; 
+    background-position: center;
     background-repeat: no-repeat;
     text-align: center; 
     display:flex;  
@@ -119,8 +120,8 @@ html, body {
 .flag-countries {
     background-image: url(/images/flag.png);
     background-repeat: no-repeat;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     justify-content: center;
     margin-top: 10px; 
     background-size: cover;
@@ -128,7 +129,7 @@ html, body {
 
 .flag-countries a {
     color: black;
-    line-height: 70px;
+    line-height: 60px;
     text-decoration: none; 
     font-family: 'Vollkorn', serif; 
     font-size: 1em; 
@@ -151,6 +152,7 @@ html, body {
     justify-content: space-around;
     flex-wrap: wrap; 
     align-self:flex-start;
+    overflow: scroll;
 }
 
 .header-country {
@@ -173,7 +175,7 @@ html, body {
 
 
 .country-article-container {
-    width:100%;
+    width:auto;
     height: auto;
     background-size: 100%; 
     background-repeat: no-repeat;
@@ -181,6 +183,7 @@ html, body {
     display:flex;  
     justify-content: space-around;
     flex-wrap: wrap; 
+    margin: 10px; 
 
 }
 
@@ -197,6 +200,7 @@ html, body {
     display:flex;  
     justify-content: space-around;
     flex-wrap: wrap; 
+    overflow: scroll; 
     
 }
 
@@ -230,6 +234,7 @@ html, body {
     width:100%;
     height: 100%; 
     background-size: 100%; 
+    background-position: center;
     background-repeat: no-repeat;
     display:flex;  
     justify-content: center;
@@ -334,6 +339,7 @@ html, body {
     width:100%;
     height: 100%; 
     background-size: 100%; 
+    background-position: center; 
     background-repeat: no-repeat;
     display:flex;  
     justify-content: center;
@@ -341,6 +347,12 @@ html, body {
     align-content: center;
     clear: both;
     color: white; 
+}
+
+.form-container {
+    position:relative;
+    resize: both;
+    overflow: scroll; 
 }
 
 .admin-title {
@@ -352,6 +364,10 @@ html, body {
 .form-label {
     text-decoration: underline; 
     display: block;
+}
+
+.form-group textarea {
+    resize: horizontal;
 }
 
                     /* DELETE AN ARTICLE */
@@ -422,11 +438,19 @@ html, body {
     padding-left: 17px; 
     padding-right: 17px; 
     position:relative;
+}
+.article-description {
+    width: auto; 
     
 
 }
-
-
+.article-text {
+    line-break: auto;
+    white-space: pre-wrap;
+    line-break:auto;
+    line-height: 30px;
+     
+}
 
 
 
@@ -510,3 +534,241 @@ html, body {
   .hover-3:hover:before {
     transform: translateX(0);
   }
+
+
+  /*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        /**HOMEPAGE**/
+        .main_index {
+            background-size: 550%;
+            background-position: center; 
+        }
+        .vignette {
+            width: 180px;
+            height: 180px;
+        }
+
+        /**COUNTRIES**/
+        .countries-content {
+            background-size: 550%;
+        }
+
+        /**FILTERED BY COUNTRY**/
+        .country-content {
+            background-size: 250%; 
+            overflow-x:hidden;
+        }
+
+        /**ARTICLES**/
+        .articles-content {
+            background-size: 250%;
+            overflow-x: hidden; 
+        }
+        .article_container {
+            padding:10px; 
+        }
+
+        /**LOGIN**/
+        .login-content {
+            background-size: 550%; 
+        }
+
+        .form-content {
+            padding: 5px; 
+        }
+
+        .login-content form {
+            width: 400px;
+            height: 300px;
+        }
+
+        /**ADMIN**/
+        .admin-container {
+            background-size: 550%;
+        }
+
+        .admin-content{
+            width: 310px;
+            height: 160px; 
+            padding: 20px; 
+        }
+
+        /**ADD**/
+        .add-container {
+            background-size: 550%;
+        }
+
+        /**DELETE**/
+        .delete-container {
+            background-size: 550%; 
+        }
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        /**HOMEPAGE**/
+        .main_index {
+            background-size: 400%; 
+            background-position: center;
+        }
+
+        /**COUNTRIES**/
+        .countries-content {
+            background-size: 400%;
+        }
+
+        /**LOGIN**/
+        .login-content {
+            background-size: 400%; 
+        }
+
+        .form-content {
+            padding: 10px; 
+        }
+
+        .login-content form {
+            width: 400px;
+            height: 300px;
+        }
+
+        /**ADMIN**/
+        .admin-container {
+            background-size: 400%;
+        }
+
+        .admin-content{
+            width: 310px;
+            height: 160px; 
+            padding: 20px; 
+        }
+
+        /**ADD**/
+        .add-container {
+            background-size: 400%;
+        }
+
+        /**DELETE**/
+        .delete-container {
+            background-size: 400%; 
+        }
+
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        /**HOMEPAGE**/
+        .main_index {
+            background-size: 250%; 
+            background-position: center;
+        }
+
+        /**COUNTRIES**/
+        .countries-content {
+            background-size: 250%;
+        }
+
+        /**LOGIN**/
+        .login-content {
+            background-size: 250%; 
+
+        }
+
+        /**ADMIN**/
+        .admin-container {
+            background-size: 250%;
+        }
+
+        /**ADD**/
+        .add-container {
+            background-size: 250%;
+        }
+
+        /**DELETE**/
+        .delete-container {
+            background-size: 250%; 
+        }
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+        /**HOMEPAGE**/
+        .main_index {
+            background-size: 200%; 
+            background-position: center;
+        }
+
+        /**COUNTRIES**/
+        .countries-content {
+            background-size: 200%;
+        }
+
+        /**LOGIN**/
+        .login-content {
+            background-size: 200%; 
+
+        }
+
+        /**ADMIN**/
+        .admin-container {
+            background-size: 200%;
+        }
+
+        /**ADD**/
+        .add-container {
+            background-size: 200%;
+        }
+
+        /**DELETE**/
+        .delete-container {
+            background-size: 200%; 
+        }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+        /**HOMEPAGE**/
+        .main_index {
+            background-size: 180%; 
+        }
+        .vignette {
+            width: 250px;
+            height: 250px;
+        }
+
+        /**COUNTRIES**/
+        .countries-content {
+            background-size: 180%;
+        }
+
+        /**LOGIN**/
+        .login-content {
+            background-size: 180%; 
+
+        }
+
+        /**ADMIN**/
+        .admin-container {
+            background-size: 180%;
+        }
+
+        /**ADD**/
+        .add-container {
+            background-size: 180%;
+        }
+
+        /**DELETE**/
+        .delete-container {
+            background-size: 180%; 
+        }
+    }
+
+   
