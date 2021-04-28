@@ -19,7 +19,10 @@
             </figure>
             <main class="article-description">
                 <div class="article-text">
-                    <%=article.text%>
+                    <!-- <%=article.text.split('\n\n')%> -->
+                    <% for (const paragraph of article.text.split('\n\n')) { %>
+                        <p><%=paragraph%></p>
+                    <% } %> 
                 </div>
             </main>
         </div>

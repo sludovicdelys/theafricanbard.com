@@ -420,6 +420,7 @@ html, body {
     box-sizing: border-box;
     margin: 0 auto;
     position: relative;
+    overflow: scroll; 
 }
 
 .article-header{
@@ -445,11 +446,9 @@ html, body {
 
 }
 .article-text {
-    line-break: auto;
-    white-space: pre-wrap;
-    line-break:auto;
-    line-height: 30px;
-     
+    font-size: 18px; 
+    white-space: normal;
+    line-height: 25px;    
 }
 
 
