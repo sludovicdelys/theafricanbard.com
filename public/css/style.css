@@ -451,7 +451,13 @@ html, body {
     line-height: 25px;    
 }
 
+                    /* MARKDOWN */
 
+.markdown-images{
+    display:flex;  
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
 
 /*Link Hover Effects by Jegede Olamide*/
 /*https://github.com/jegedeolamide99*/

@@ -1,5 +1,21 @@
 # Projet Travel Blog 
 
+<!-- INDEX -->
+<details open="open">
+  <summary>Index</summary>
+  <ol>
+    <li><a href="#analyse-préliminaire">Analyse préliminaire </a></li>
+    <li>
+      <a href="#carnet-de-bord">Carnet de bord</a>
+      <ul>
+        <li><a href="#serveur">Serveur</a></li>
+        <li><a href="#interface">Interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-images">Les images</a></li>
+  </ol>
+</details>
+
 # Analyse préliminaire 
 
 - une page web avec des articles de voyage 
@@ -16,9 +32,9 @@
 - Bonus: Plusieurs 'auteurs' peuvent se connecter à leurs profil et ajouter ou supprimer un article 
 
 
-# Notes/Debugging Log
+# Carnet de bord
 
-## A. Partie serveur du projet
+## A. Serveur
 -------
 ### 1. Des images dans la BDD ?
 
@@ -173,7 +189,7 @@ Afin de protéger mon application de la faille de sécurité ``Cross-Site Script
   - les infos reçues via un formulaire : request.body
 
 -------
-## B. Partie interface du projet 
+## B. Interface
 -------
 
 - Pour cette partie, j'ai commencer par la page d'accueil. Je voulais avoir quelque chose de fonctionnel avec une apparence esthétique élégante. 
@@ -210,16 +226,89 @@ _26 Avril 2021_
 
 # Les images 
 
+<section class="markdown-images">
 <div>
-<img src="public/images/index.jpg" alt="Antique compass" width="200"/>
+<img src="public/images/index.jpg" alt="Antique compass" width="400"/>
 <figcaption>Jordan Madrid</figcaption>
 </div>
 
-![Antique globe](public/images/countries.jpg)*Adolfo Felix*
-![Combination padlock](public/images/login.jpg)*Micah Williams*
-![Spider web](public/images/login.jpg)*Micah Williams*
-![Typewriter on wood](public/images/add.jpg)*Patrick Fore*
-![Airplane view](public/images/image1.jpg)*Patrick Tomasso*
-![Colonia Tovar towers](public/images/image2.jpg)*Jorge Salvador*
-![Female reporter](public/images/image3.jpg)*Joppe Spaa*
+<div>
+<img src="public/images/countries.jpg" alt="Combination padlock" width="400"/>
+<figcaption>Adolfo Felix</figcaption>
+</div>
 
+<div>
+<img src="public/images/login.jpg" alt="Combination padlock" width="400"/>
+<figcaption>Micah Williams</figcaption>
+</div>
+
+<div>
+<img src="public/images/admin-index.jpg" alt="Spider web" width="400"/>
+<figcaption>Freestocks</figcaption>
+</div>
+
+<div>
+<img src="public/images/add.jpg" alt="Typewriter on wood" width="400"/>
+<figcaption>Patrick Fore</figcaption>
+</div>
+
+<div>
+<img src="public/images/image1.jpg" alt="Airplane view" width="400"/>
+<figcaption>Patrick Tomasso</figcaption>
+</div>
+
+<div>
+<img src="public/images/image2.jpg" alt="Colonia Tovar towers" width="400"/>
+<figcaption>Jorge Salvador</figcaption>
+</div>
+
+<div>
+<img src="public/images/image3.jpg" alt="Female reporter" width="400"/>
+<figcaption>Joppe Spaa</figcaption>
+</div>
+
+<div>
+<img src="public/images/image4.jpg" alt="Street cars" width="400"/>
+<figcaption>Jorge Salvador</figcaption>
+</div>
+
+<div>
+<img src="public/images/image5.jpg" alt="Iron fist" width="400"/>
+<figcaption>Bruno Aguirre</figcaption>
+</div>
+
+<div>
+<img src="public/images/image6.jpg" alt="Rusted chain" width="400"/>
+<figcaption>Nick Fewings</figcaption>
+</div>
+
+<div>
+<img src="public/images/image7.jpg" alt="Macaw" width="400"/>
+<figcaption>Marcus Dall Col</figcaption>
+</div>
+
+<div>
+<img src="public/images/image8.jpg" alt="Man and child on beach" width="400"/>
+<figcaption>Ali Diaz</figcaption>
+</div>
+
+<div>
+<img src="public/images/image9.jpg" alt="Woman in front of window" width="400"/>
+<figcaption>Jorge Salvador</figcaption>
+</div>
+
+<div>
+<img src="public/images/country.jpg" alt="" width="400"/>
+<figcaption>Annie Spratt</figcaption>
+</div>
+
+<div>
+<img src="public/images/articles.jpg" alt="" width="400"/>
+<figcaption>Ivan Gromov</figcaption>
+</div>
+
+<div>
+<img src="public/images/delete.jpg" alt="" width="400"/>
+<figcaption>Michael Dziedzic</figcaption>
+</div>
+</section>
