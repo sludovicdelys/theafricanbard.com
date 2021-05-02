@@ -9,8 +9,8 @@ module.exports = {
             const articles = await Article.findAll({
                 include: "countries"
             });
- 
-            response.render('articles', {articles});
+
+            response.render('articles', { articles });
         } catch (error) {
             console.error(error);
             response.status(500).json({ error: error.message });
@@ -24,11 +24,10 @@ module.exports = {
 
             const article = await Article.findByPk(articleId,
                 { include: 'countries' });
-            response.render('article', {article});
+            response.render('article', { article });
         } catch (error) {
             console.error(error);
             response.status(500).json({ error: error.message });
-
         }
     }
 }

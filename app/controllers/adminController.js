@@ -10,7 +10,6 @@ module.exports = {
     },
 
 
-
     // Méthode qui vérifie que les bonnes informations de connexion sont saisies
     loginPost: (request, response) => {
 
@@ -79,7 +78,7 @@ module.exports = {
 
             // Convertir les valeurs de type chaîne en valeurs de type numérique
             // Conversion compatible avec un tableau de valeurs correspondant à un article avec plusieurs pays
-            const countryIdString = [...request.body.country];
+            const countryIdString = [request.body.country];
             const countryId = countryIdString.map(element => parseInt(element, 10));
 
             // Stocker les informations du formulaire dans un objet qui représente le nouvel article à ajouter. 
@@ -148,7 +147,6 @@ module.exports = {
         console.log(articleId);
 
         try {
-
             const deletedArticle = await Article.destroy({where: {id: articleId}});
 
             if(deletedArticle >= 1) {

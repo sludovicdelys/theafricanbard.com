@@ -1,6 +1,6 @@
 # Projet Travel Blog 
 
-## Analyse préliminaire 
+# Analyse préliminaire 
 
 - une page web avec des articles de voyage 
 - un administrateur qui peut se connecter 
@@ -18,7 +18,9 @@
 
 # Notes/Debugging Log
 
-## Des images dans la BDD ?
+## A. Partie serveur du projet
+-------
+### 1. Des images dans la BDD ?
 
 _28 Mars 2021_
 
@@ -30,9 +32,7 @@ Il faudrait plutôt stocker les images dans un dossier et les chemins vers ces i
 
 - Les base de données d'aujourd'hui sont tout à fait capable de stocker de grandes images, mais je choisis de stocker les images enregistrées par l'administrateur dans un dossier images, qui sera ensuite ajouter a la base de données. 
 
--------
-
-## Il y a beaucoup de textes dans ma requête SQL
+### 2. Il y a beaucoup de textes dans ma requête SQL
 
 _29 Mars 2021_
 
@@ -40,9 +40,7 @@ _29 Mars 2021_
 
 - Rien à faire, le fichier SQL n'est pas censé être 'beau'. Il faut que j'écrive tout les paragraphes de mes articles dans ma transaction SQL.
 
--------
-
-## Pouvoir récupérer la colonne country_id dans ma requêtes des articles
+### 3. Pouvoir récupérer la colonne country_id dans ma requêtes des articles
 
 _01 Avril 2021_
 
@@ -54,9 +52,8 @@ _01 Avril 2021_
     - Dans mon fichier ```country.js ``` je configure mon timestamps, createdAt et updatedAt a ```false``` pour ne pas que sequelize ajoute directement ces colonnes et éviter les erreurs avec un status 500 dans ma requête.  
     ![Erreur 500 Sequelize](doc/images/erreur500_sequelize.png)
     
--------
 
-## Récupérer un fichier en POST et l'ajouter dans mon dossier 'images'
+### 4. Récupérer un fichier en POST et l'ajouter dans mon dossier 'images'
 
 _07 Avril 2021_
 
@@ -82,9 +79,7 @@ _07 Avril 2021_
 uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name;
 ```
 
--------
-
-## Un operateur Sequelize qui permet une requête SQL du type IN [1, 2]
+### 5. Un operateur Sequelize qui permet une requête SQL du type IN [1, 2]
 
 _08 Avril 2021_
 
@@ -107,9 +102,8 @@ id: { [Op.in]: infosArticle.countries }
 }
 });
 ```
--------
 
-## Créer un nouvel article, puis l'associer à des pays existants dans la table 'country'
+### 6. Créer un nouvel article, puis l'associer à des pays existants dans la table 'country'
 
 _11 Avril 2021_
 
@@ -146,5 +140,86 @@ _11 Avril 2021_
     await newArticle.addCountries(countries, {as: 'countries'});
 ```
 
+### 7. Afficher les images sur GitHub 
 
+_16 Avril 2021_
+
+- En connectant le projet à mon compte GitHub, je me suis rendue compte que les images de mon fichier `README.md` ne s'affichaient pas. 
+- Pour y remédier j'ai d'abord supprimer le fichier `README.md` qui a été créer automatiquement lors de la création du dépôt. 
+- Après avoir tester toutes les astuces proposées sur [Stackoverflow](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github/53771381), je me suis demandée si j'avais bien indiquer à mon programme le bon chemin vers mes images. 
+- En effet je n'avais pas indiquer que mon dossier `images` se trouvait lui même dans mon dossier `doc` qui se trouve à la racine de mon projet. 
+``` 
+./images/erreur500_sequelize.png 
+ ``` 
+ - De plus en observant mon erreur de plus près, j'indiquais à mon programme, avec la syntaxe `./` d'aller chercher mes images dans le dossier actuel du fichier sur lequel je travaille. Hors, mon fichier `README.md` se trouve à la racine de mon projet. 
+ - Le bon chemin vers mes images est celui-ci: 
+ ```
+ doc/images/erreur500_sequelize.png
+ ```
+
+### 8. Sécuriser le mot de passe
+
+_19 Avril 2021_ 
+
+- Pour éviter qu'un autre programmeur puisse facilement avoir accès au mot de passe du compte administrateur, j'ai décider de stocker celui-ci dans mon fichier `.env`.
+
+### 9. Éviter les injections malveillantes
+
+_19 Avril 2021_ 
+
+Afin de protéger mon application de la faille de sécurité ``Cross-Site Scripting`` inhérent aux formulaire HTML, j'ai mis en place un package [sanitizer](https://www.npmjs.com/package/sanitizer) qui me permet d'utiliser plusieurs méthodes pour assainir les données qui peuvent être fournies par l'utilisateur: 
+  - les paramètres d'URL : request.params
+  - les infos fournies dans l'URL : request.query
+  - les infos reçues via un formulaire : request.body
+
+-------
+## B. Partie interface du projet 
+-------
+
+- Pour cette partie, j'ai commencer par la page d'accueil. Je voulais avoir quelque chose de fonctionnel avec une apparence esthétique élégante. 
+
+- J'ai utiliser trois polices de caractères que j'ai récupérer sur [Google Fonts](https://fonts.google.com/).
+
+- Pour la création du site en mode "responsive", je me suis aidée d'une documentation concernant le [Boostrap de Twitter](https://scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries).
+
+### 10. La barre de navigation et le logo
+
+_19 Avril 2021_ 
+
+- J'avais du mal à me décider sur la stylisation du logo avec Canvas, alors je me suis contentée de choisir une police de caractère qui attirait l'oeil. 
+- Je voulais que ma barre de navigation, ainsi que le logo de du site soit mis en valeur avec de l'animation. Je savais que cela était possible avec les propriétés `hover` et `transition-delay`, mais je ne savais pas par où commencer. 
+- Je me suis aidée du code de Jegede Olamide que j'ai trouver sur [CodePen](https://codepen.io/jegedeolamide99/pen/MOqrZj).
+
+### 11. Les articles et les pays 
+
+_22 Avril 2021_ 
+
+- Pour la page qui contient tout les articles ainsi que leur lecture, je me suis inspirée du site de [Emma Gannon](https://www.emmagannon.co.uk/blogger). 
+
+- Pour les pages où il y avait moins d'informations à lire par l'utilisateur, j'ai préferer attirer l'attention de l'utilisateur avec une image de fond. 
+
+- Je me suis aidée du guide flexbox sur le site [css.tricks.com](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), ainsi que la documentation sur la propriété CSS position qui se trouve sur [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/position) 
+
+### 12. Se connecter, supprimer un article, ajouter un article 
+
+_26 Avril 2021_ 
+
+- La propriété CSS [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) m'a été utile lorsque j'ai remarquer que ma liste d'articles à supprimer, débordait et chevauchait mon bas de page. 
+
+- J'ai utiliser la librairie de [Font Awesome](https://fontawesome.com) afin d'ajouter une icône représentant le bouton pour supprimer un article. 
+
+# Les images 
+
+<div>
+<img src="public/images/index.jpg" alt="Antique compass" width="200"/>
+<figcaption>Jordan Madrid</figcaption>
+</div>
+
+![Antique globe](public/images/countries.jpg)*Adolfo Felix*
+![Combination padlock](public/images/login.jpg)*Micah Williams*
+![Spider web](public/images/login.jpg)*Micah Williams*
+![Typewriter on wood](public/images/add.jpg)*Patrick Fore*
+![Airplane view](public/images/image1.jpg)*Patrick Tomasso*
+![Colonia Tovar towers](public/images/image2.jpg)*Jorge Salvador*
+![Female reporter](public/images/image3.jpg)*Joppe Spaa*
 

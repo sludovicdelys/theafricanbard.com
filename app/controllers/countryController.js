@@ -9,8 +9,7 @@ module.exports = {
             const countries = await Country.findAll();
             response.render('country', {countries});
         } catch (error) {
-            console.error(error);
-            response.status(500).json({ error: error.message });
+            response.status(500).json({ error: 'An internal error has occured. Please retry or contact the administrator.' });
         }
     },
 
@@ -31,3 +30,17 @@ module.exports = {
         }
     }
 }
+
+
+// .env
+// MODE=DEBUGGING
+// bachi=dejkvf
+
+// .env
+// MODE=PRODUCTION
+
+
+
+// {
+
+// }
