@@ -13,6 +13,7 @@
       </ul>
     </li>
     <li><a href="#les-images">Les images</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -224,6 +225,8 @@ _26 Avril 2021_
 
 - J'ai utiliser la librairie de [Font Awesome](https://fontawesome.com) afin d'ajouter une icône représentant le bouton pour supprimer un article. 
 
+-------
+
 # Les images 
 
 <div>
@@ -310,3 +313,11 @@ _26 Avril 2021_
 <img src="public/images/delete.jpg" alt="" width="400"/>
 <figcaption>Michael Dziedzic</figcaption>
 </div>
+
+-------
+
+# Contact 
+
+Sabrina Ludovic de Lys - [ludovicdelyssabrina@gmail.com](ludovicdelyssabrina@gmail.com)
+
+Project Link: [https://github.com/sludovicdelys/theafricanbard.com](https://github.com/sludovicdelys/theafricanbard.com)
