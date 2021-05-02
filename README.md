@@ -226,7 +226,6 @@ _26 Avril 2021_
 
 # Les images 
 
-<section class="markdown-images">
 <div>
 <img src="public/images/index.jpg" alt="Antique compass" width="400"/>
 <figcaption>Jordan Madrid</figcaption>
@@ -311,4 +310,3 @@ _26 Avril 2021_
 <img src="public/images/delete.jpg" alt="" width="400"/>
 <figcaption>Michael Dziedzic</figcaption>
 </div>
-</section>
