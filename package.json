@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/theafricanbard/theafricanbard.com/issues"
+  },
+  "engines": {
+    "node": "14.15.4"
   },
   "homepage": "https://github.com/theafricanbard/theafricanbard.com#readme",
   "dependencies": {
