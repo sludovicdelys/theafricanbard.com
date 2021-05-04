@@ -69,7 +69,7 @@ module.exports = {
             // Stocker le fichier image dans une variable sampleFile
             sampleFile = request.files.sampleFile;
             // Stocker le chemin pour accéder à cette image dans une variable uploadPath
-            uploadPath = '/Users/sabrinaludovicdelys/Desktop/Code/theafricanbard.com/public/images/' + sampleFile.name;
+            uploadPath = './images/' + sampleFile.name;
 
             // Utiliser mv() pour placer le fichier dans notre dossier images 
             sampleFile.mv(uploadPath);
