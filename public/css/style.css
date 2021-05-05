@@ -187,6 +187,10 @@ html, body {
 
 }
 
+.no-article {
+    align-self:flex-end;
+}
+
 
                     /** ARTICLES PAGE **/
 
