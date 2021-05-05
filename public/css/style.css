@@ -187,8 +187,17 @@ html, body {
 
 }
 
-.no-articles {
-    align-self:flex-end;
+.no-article-container {
+    width:auto;
+    height: auto;
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    align-items: center;
+    display:flex;  
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    margin: 10px; 
+    font-size: 100%; 
 }
 
 
