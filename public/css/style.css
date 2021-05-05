@@ -561,13 +561,13 @@ html, body {
 
         /**FILTERED BY COUNTRY**/
         .country-content {
-            background-size: 250%; 
+            background-size: 400%; 
             overflow-x:hidden;
         }
 
         /**ARTICLES**/
         .articles-content {
-            background-size: 250%;
+            background-size: 400%;
             overflow-x: hidden; 
         }
         .article_container {
