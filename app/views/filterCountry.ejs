@@ -6,9 +6,10 @@
         <p><%=country.name%></p>
     </div>
 
-
-    <% for (const article of country.articles) { %>
     <div class="country-article-container"></div>
+    <% if (country.article) { %>
+    <% for (const article of country.articles) { %>
+
     <article class="article_container">
 
         <img src="<%=article.image_path%>" alt="">
@@ -22,9 +23,11 @@
             Read More
         </a>
     </article>
-</div>
-<% } %>
 
+    <% } %>
+    }
+
+</div>
 
 </div>
 
