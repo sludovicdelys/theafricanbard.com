@@ -6,7 +6,7 @@
         <p><%=country.name%></p>
     </div>
 
-    <% if (country.articles) { %>
+    <% if (country.articles && country.articles.length) { %>
         <div class="country-article-container">
 
             <% for (const article of country.articles) { %>
@@ -27,6 +27,8 @@
 
             <% } %>
         </div>
+    <% } else { %>
+        <p>There are no articles available</p>
     <% } %>
 </div>
 
