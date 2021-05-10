@@ -120,21 +120,20 @@ html, body {
 .flag-countries {
     background-image: url(/images/flag.png);
     background-repeat: no-repeat;
-    background-color: white; 
-    width: 110px;
-    height: 110px;
-    justify-content: center;
-    margin-top: 10px; 
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
     background-size: cover;
 }
 
+
 .flag-countries a {
     color: black;
-    line-height: 60px;
-    text-decoration: none; 
-    font-family: 'Vollkorn', serif; 
-    font-size: 1em; 
-
+    line-height: 130px;
+    text-decoration: none;
+    font-family: 'Vollkorn', serif;
+    font-size: 1em;
+    margin-right: 10px;
 }
 
 .flag-countries a:hover {
