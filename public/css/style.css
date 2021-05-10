@@ -161,9 +161,9 @@ html, body {
     width: 150px;
     height: 150px;
     justify-content: center;
-    margin-top: 10px; 
     background-size: cover;
     text-align: center;
+    margin: 130px;
     
 }
 
@@ -580,7 +580,7 @@ html, body {
 
         /**ARTICLES**/
         .articles-content {
-            background-size: 400%;
+            background-size: 350%;
             overflow-x: hidden; 
         }
         .article_container {
