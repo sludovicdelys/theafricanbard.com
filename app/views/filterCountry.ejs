@@ -1,35 +1,36 @@
 <%- include('partials/header'); %>
-
-<div class="header-country">
+<div class=country-content>
+    <div class="header-country">
         <p><%=country.name%></p>
     </div>
 
-<div class="country-content">
-
-    <% if (country.articles && country.articles.length) { %>
+    <div class="country-article-content">
+        <% if (country.articles && country.articles.length) { %>
         <div class="country-article-container">
 
             <% for (const article of country.articles) { %>
 
-                <article class="article_container">
+            <article class="article_container">
 
-                    <img src="<%=article.image_path%>" alt="">
+                <img src="<%=article.image_path%>" alt="">
 
-                    <p class="article_title"><%= article.title %>
-                        <br>
-                        <span class="article_date"><em><%= article.created_at.toDateString() %></em></span>
-                    </p>
+                <p class="article_title"><%= article.title %>
+                    <br>
+                    <span class="article_date"><em><%= article.created_at.toDateString() %></em></span>
+                </p>
 
-                    <a href="/articles/<%=article.id%>">
-                        Read More
-                    </a>
-                </article>
+                <a href="/articles/<%=article.id%>">
+                    Read More
+                </a>
+            </article>
 
             <% } %>
         </div>
-    <% } %>
-        
+        <% } %>
+    </div>
+
 </div>
+
 
 
 <%- include('partials/footer'); %>
