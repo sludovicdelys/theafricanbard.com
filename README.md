@@ -227,6 +227,35 @@ _26 Avril 2021_
 
 -------
 
+## C. Heroku 
+
+### 13. Déploiement d'une application Node.js sur Heroku 
+
+ERREUR:
+
+![Erreur](doc/images/erreur-npm-heroku.png)
+
+SOLUTION:
+
+- Afin de lancer mon application, Heroku a besoin d'un fichier Procfile. 
+Lorsque celui-ci n'est pas présent il tente de lancer l'application avec la configuration ```start script``` qui se trouve dans le fichier ```package.json```.
+Il fallait donc que je dise à Heroku d'executer mon application en ajoutant ceci dans ```package.json```
+```
+"scripts": {
+    "start": "node index.js"
+  },
+```
+[Documentation Déploiement en Node.js sur Heroku](https://devcenter.heroku.com/articles/deploying-nodejs). 
+
+### 14. Configuration des variables d'environnement 
+
+- Même si mon application se lance dans plusieurs environnement, il est important de noter que les configuration de ses environnements seront différentes. 
+La configuration spécifique à l'environnement d'une application doit être stockée dans des variables d'environnement (et non dans le code source de l'application).
+Il fallait que je configure les variables d'environnement nécessaire au lancement de mon application sur Heroku. 
+
+
+
+
 # Les images 
 
 <div>
