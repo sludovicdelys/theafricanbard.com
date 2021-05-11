@@ -253,6 +253,7 @@ Il fallait donc que je dise à Heroku d'executer mon application en ajoutant cec
 La configuration spécifique à l'environnement d'une application doit être stockée dans des variables d'environnement (et non dans le code source de l'application).
 Il fallait que je configure les variables d'environnement nécessaire au lancement de mon application sur Heroku. 
 
+ [Configuration et les variables d'environnements](https://devcenter.heroku.com/articles/config-vars).
 
 
 
