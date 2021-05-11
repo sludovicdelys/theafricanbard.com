@@ -354,6 +354,23 @@ Unable to quiet my running mind, I excused myself from the lunch table and crawl
 I am an African. There was no doubt in my mind about it. I was born there, tailored and shaped by multiple African cultures. None of them were the same and that is what shaped me into a traveler. Always curious about others and endlessly investigating our common humanity our shared similarities far and wide. The lesson that I was starting to accept from my trip was that our lineage or the place where we were born does not entirely define who we are. Although we share common ancestry our paths were never the same and that should be honoured just as much. In conclusion, I had found the courage to accept my uniqueness, and allowed myself to feel deserving of this life. 
 
 I spent the ride in quiet contemplation. The next day, I would board a plane and I might never see these big green mountains again. I would talk about all these people that I met as if they were characters from a mysterious book. I would trivially keep contact through the internet, but I might not feel the weight or lightness of their daily lives. I would continue to be just a visitor, like wind passing by. Our memories of each other would vividly stay or they might get blurred by the time we spent separated. No matter what, we would still be who we are. We could always hold on to that. Our honest intricate lives.'
+),
+(10, 
+'FESPACO',
+'/images/fespaco.jpg',
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus ante, iaculis vitae leo in, suscipit molestie elit. Cras id ex rhoncus, ultrices lorem egestas, mollis libero. Maecenas vestibulum efficitur fringilla. Integer id arcu eu felis pretium varius. Donec id sem vitae lectus viverra ultricies. Cras a ultrices neque. Vivamus imperdiet ipsum a arcu auctor pellentesque. Fusce non mollis lectus, eget hendrerit justo.
+
+Integer volutpat congue ante, quis commodo libero lobortis a. Praesent eleifend, erat vel suscipit auctor, erat magna bibendum tellus, maximus dictum justo orci in felis. Donec sodales consectetur dolor vitae viverra. Quisque suscipit sagittis nisl, sed eleifend risus gravida sit amet. Nunc pretium pulvinar mi a pellentesque. Curabitur eget aliquam orci, a faucibus mi. Quisque vulputate dignissim est in dignissim. Aliquam erat volutpat.
+'
+),
+(11,
+'Tunis Connection',
+'/images/tunis.jpeg',
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus ante, iaculis vitae leo in, suscipit molestie elit. Cras id ex rhoncus, ultrices lorem egestas, mollis libero. Maecenas vestibulum efficitur fringilla. Integer id arcu eu felis pretium varius. Donec id sem vitae lectus viverra ultricies. Cras a ultrices neque. Vivamus imperdiet ipsum a arcu auctor pellentesque. Fusce non mollis lectus, eget hendrerit justo.
+
+Integer volutpat congue ante, quis commodo libero lobortis a. Praesent eleifend, erat vel suscipit auctor, erat magna bibendum tellus, maximus dictum justo orci in felis. Donec sodales consectetur dolor vitae viverra. Quisque suscipit sagittis nisl, sed eleifend risus gravida sit amet. Nunc pretium pulvinar mi a pellentesque. Curabitur eget aliquam orci, a faucibus mi. Quisque vulputate dignissim est in dignissim. Aliquam erat volutpat.
+
+'
 );
 
 INSERT INTO "country" ("id", "name", "color") VALUES 
@@ -379,7 +396,9 @@ INSERT INTO "article_has_country" ("article_id", "country_id") VALUES
 (6, 1),
 (7, 1),
 (8, 1),
-(9, 1);
+(9, 1),
+(10, 2),
+(11, 3);
 
 -- Remettre à jours la numérotation automatique de postgres pour éxecuter le script plusieurs fois sans incohérences
 
