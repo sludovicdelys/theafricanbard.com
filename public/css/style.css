@@ -149,21 +149,19 @@ html, body {
     background-repeat: no-repeat;
     align-items: center;
     display:flex;  
-    justify-content: space-around;
-    flex-wrap: wrap; 
     align-self:flex-start;
     overflow: scroll;
+    flex-direction: column;
 }
 
 .header-country {
     background-image: url(/images/globe.png);
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: auto;
     justify-content: center;
     background-size: cover;
     text-align: center;
-    margin: 130px;
+    padding-bottom: 30px; 
     
 }
 
