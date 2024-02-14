@@ -1,4 +1,10 @@
+
+https://github.com/sludovicdelys/theafricanbard.com/assets/74900669/6bfc674c-37a2-42e3-9ebf-c8bf23684ad7
 # Projet Travel Blog 
+
+
+https://github.com/sludovicdelys/theafricanbard.com/assets/74900669/fa340e7d-d333-4f65-8d7a-2eee86752e88
+
 
 <!-- INDEX -->
 <details open="open">
