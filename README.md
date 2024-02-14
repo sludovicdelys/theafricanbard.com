@@ -1,5 +1,3 @@
-
-https://github.com/sludovicdelys/theafricanbard.com/assets/74900669/6bfc674c-37a2-42e3-9ebf-c8bf23684ad7
 # Projet Travel Blog 
 
 
