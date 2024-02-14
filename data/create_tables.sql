@@ -24,7 +24,6 @@ CREATE TABLE "country" (
     "id" SERIAL PRIMARY KEY, 
     "name" TEXT NOT NULL,
     "color" TEXT NOT NULL
-   
 );
 
 /* Création de la table "article_has_country"*/
