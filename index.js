@@ -22,9 +22,15 @@ app.set('views', './app/views');
 
 // Gérer les sessions
 app.use(session({
-    secret: 'topsecretstuffyoucantsee',
+    secret: `${process.env.SECRET}`,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    /*cookie: {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production', // Use 'secure' cookies in production
+        sameSite: true,
+        maxAge: 24 * 60 * 60 * 1000 // Session cookie will expire in 24 hours
+    }*/
 }));
 const sanitize = require('./app/middlewares/request-sanitizer');
 // Récupérer les infos envoyées en POST
